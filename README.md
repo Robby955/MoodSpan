@@ -4,37 +4,116 @@ Agentic RAG system for mental health education. Bounded tool-calling loop over a
 
 Live at [moodspan.org](https://moodspan.org). Source code is in a private repo. This repo contains the technical paper, evaluation results, and sample outputs.
 
-**See [EXAMPLES.md](EXAMPLES.md) for real multi-turn conversations produced by the system.**
+**[Real multi-turn conversations produced by the system](EXAMPLES.md)** | **[Technical paper](docs/moodspan-technical-paper.md)** | **[Raw eval data](eval/results/)**
 
-## Architecture
+## System Architecture
 
-Kira (the assistant) runs a ReAct-style agentic loop (Llama 3.3 70B via Groq) with 4 structured tools over 780+ articles and 88 DSM-5-TR conditions (12,650 chunks, 384-dim embeddings in pgvector).
+```mermaid
+flowchart TB
+    subgraph Input["Input Pipeline"]
+        U[User Query] --> IG[Input Guard<br/><i>15+ injection patterns</i>]
+        IG --> SC[Safety Classifier<br/><i>3-tier: crisis / caution / safe</i>]
+        SC -->|crisis| CR[988 Lifeline Routing<br/><i>deterministic, no LLM</i>]
+        SC -->|safe/caution| RT[Pre-Agentic Router<br/><i>~5ms, $0</i>]
+    end
 
-**Retrieval:** Hybrid dense-sparse fusion. MiniLM-L6-v2 embeddings + BM25 with Reciprocal Rank Fusion (60/40 weighting), clinical synonym expansion (80+ mappings), forced retrieval on round 1 to prevent parametric hallucination.
+    subgraph Router["Routing Layer"]
+        RT -->|greeting/off-topic| DET[Deterministic Response]
+        RT -->|3+ conditions| CLAUDE[Claude Opus 4.6<br/><i>adaptive thinking</i>]
+        RT -->|standard| AGENT[Agentic Loop]
+    end
 
-**Tools:**
-- `search_knowledge_base` : hybrid vector + BM25 search
-- `compare_conditions` : structured side-by-side comparison
-- `get_condition_info` : DSM-5-TR structured lookup
-- `suggest_screeners` : symptom-to-instrument mapping (PHQ-9, GAD-7, PCL-5)
+    subgraph Agent["ReAct Agentic Loop — Llama 3.3 70B via Groq"]
+        AGENT --> TC{Tool Selection}
+        TC --> T1[search_knowledge_base<br/><i>hybrid vector + BM25</i>]
+        TC --> T2[compare_conditions<br/><i>structured side-by-side</i>]
+        TC --> T3[get_condition_info<br/><i>DSM-5-TR lookup</i>]
+        TC --> T4[suggest_screeners<br/><i>PHQ-9, GAD-7, PCL-5</i>]
+        T1 & T2 & T3 & T4 --> OBS[Observe Result]
+        OBS -->|needs more info| TC
+        OBS -->|ready| GEN[Generate Response<br/><i>9 constitutional principles</i>]
+    end
 
-**Safety:** Crisis detection is fully deterministic (regex-based, no LLM dependency). Input guard blocks prompt injection. Output guard catches diagnostic language and identity leaks. Constitutional principles (9 rules) guide response generation without a separate API call.
+    subgraph Retrieval["Hybrid Retrieval"]
+        T1 --> QR[Query Rewrite<br/><i>multi-turn context</i>]
+        QR --> QE[Clinical Synonym Expansion<br/><i>80+ mappings</i>]
+        QE --> VEC[Dense: MiniLM-L6-v2<br/><i>384-dim, ONNX</i>]
+        QE --> BM[Sparse: BM25<br/><i>12,650 chunks</i>]
+        VEC & BM --> RRF[Reciprocal Rank Fusion<br/><i>60/40 weighting</i>]
+        RRF --> TOP[Top-k Results]
+    end
 
-**Routing:** Pre-agentic classifier handles greetings and off-topic queries deterministically (~5ms, $0) before the LLM is invoked. Complex differential queries (3+ conditions) escalate to Claude Opus 4.6 with adaptive thinking.
+    subgraph Storage["Data Layer"]
+        PG[(Neon Postgres<br/>pgvector IVFFlat)]
+        RD[(Upstash Redis<br/>rate limit + cache)]
+        VEC --> PG
+        BM --> PG
+    end
 
-## Retrieval Results
+    subgraph Output["Output Pipeline"]
+        GEN --> OG[Output Guard<br/><i>diagnostic/identity leak filter</i>]
+        OG --> SSE[SSE Stream to Client]
+    end
 
-Hybrid fusion is the dominant factor, adding +20.7 percentage points over BM25 alone. Cross-encoder reranking provided no statistically significant improvement (confidence intervals overlap), so I disabled it in production. Likely a closed-domain effect where strong initial retrieval leaves nothing for the reranker to fix.
+    style Input fill:#f0fdfa,stroke:#0f766e
+    style Agent fill:#eff6ff,stroke:#3b82f6
+    style Retrieval fill:#fefce8,stroke:#ca8a04
+    style Output fill:#f0fdf4,stroke:#16a34a
+    style Storage fill:#faf5ff,stroke:#9333ea
+```
 
-All metrics measured on a held-out test set (n=107, 70/30 split) with bootstrap 95% confidence intervals (2,000 iterations).
+Round 1 forces tool use (`tool_choice: "required"`) to prevent parametric hallucination. Subsequent rounds use `tool_choice: "auto"`.
+
+## Retrieval Pipeline
+
+Hybrid dense-sparse fusion with Reciprocal Rank Fusion (Cormack et al., 2009). The dense path runs MiniLM-L6-v2 embeddings (384-dim, local ONNX inference) against a pgvector IVFFlat index. The sparse path runs BM25 with clinical synonym expansion (80+ domain-specific mappings). RRF merges the two ranked lists with 60/40 dense-sparse weighting.
+
+Multi-turn context is handled by query rewriting: a heuristic path extracts clinical terms from the last 4 messages (0ms, $0), with a Groq LLM fallback for very short queries (~100ms).
+
+**Ablation results** on held-out test set (n=107, 70/30 split, bootstrap 95% CIs, 2,000 iterations):
+
+| Configuration | Recall@5 | MRR | NDCG@10 |
+|---|---|---|---|
+| BM25 raw | 71.3% | 62.4% | 65.0% |
+| BM25 + synonym expansion | 79.8% (+8.5pp) | 66.3% | 70.8% |
+| **Hybrid fusion** | **92.0% (+20.7pp)** | **87.7%** | **87.9%** |
+| Hybrid + cross-encoder rerank | 92.0% (ns) | 87.9% (ns) | 88.1% (ns) |
+
+Hybrid fusion is the dominant factor. Cross-encoder reranking (ms-marco-MiniLM-L-6-v2) provided no statistically significant improvement (CIs overlap), so it is disabled in production. This is likely a closed-domain effect: strong initial retrieval leaves nothing for the reranker to fix.
 
 ![Recall Ablation](docs/figures/ablation-recall.svg)
 ![MRR/NDCG Ablation](docs/figures/ablation-mrr-ndcg.svg)
 ![Category Heatmap](docs/figures/category-heatmap.svg)
 
-## Response Quality
+## Safety Architecture
 
-Evaluated across 40 multi-turn conversations (127 total turns, 8 clinical categories):
+Four deterministic layers plus one LLM-guided layer. The critical path (crisis detection) has zero LLM dependency.
+
+| Layer | Mechanism | Deterministic | Latency |
+|---|---|---|---|
+| Input guard | 15+ injection/jailbreak regex patterns | Yes | <1ms |
+| Safety classifier | 3-tier: crisis (988 routing) / caution / safe | Yes (crisis path) | <1ms |
+| Constitutional | 9 behavioral principles in system prompt | No (guides LLM) | 0ms (no extra call) |
+| Output guard | Identity, prompt, and diagnostic leak filtering | Yes | <1ms |
+| Rate limit | 20/min + 200/day per IP (Upstash Redis) | Yes | <1ms |
+
+Crisis detection uses regex, not an LLM. No false-negative risk from model uncertainty. See the [technical paper](docs/moodspan-technical-paper.md) for the full pattern set.
+
+## Eval Infrastructure
+
+12 evaluation scripts with bootstrap confidence intervals on every metric:
+
+| Script | What it measures |
+|---|---|
+| `eval-harness.ts` | Recall@k, MRR, NDCG@10 on held-out test set |
+| `eval-conversations.ts` | Multi-turn quality (40 scenarios, 127 turns, 8 categories) |
+| `eval-failure-analysis.ts` | Failure taxonomy (query mismatch, ranking, embedding, data gap) |
+| `eval-compare.ts` | Ablation comparison tables |
+| `eval-plot.ts` | SVG figure generation |
+| `benchmark-eval.ts` | External benchmark eval (MedMCQA-Psychiatry) |
+| `generate-gold-qa.ts` | Gold Q&A generation from structured data |
+
+**Response quality** across 40 multi-turn conversations (127 total turns):
 
 | Metric | Score |
 |---|---|
@@ -43,39 +122,17 @@ Evaluated across 40 multi-turn conversations (127 total turns, 8 clinical catego
 | Tone | 4.96/5 |
 | Safety compliance | 4.98/5 |
 
-Clinical exam performance (hand-authored, not from the knowledge base):
+**Clinical exam performance** (hand-authored, not from the knowledge base):
 
 | Exam | Score |
 |---|---|
 | Extended Psychiatric (80 MCQ) | 92.5% |
 | Ultra-Hard Fellowship-Level (50 MCQ) | 94.0% |
-| Ethics and Legal (30 MCQ) | 100% answered correctly, 11 correctly safety-filtered |
-| Written Clinical Scenarios (20) | 17 pass, 3 minor issues, 0 major |
+| Ethics and Legal (30 MCQ) | 100% correct, 11 correctly safety-filtered |
+| Written Clinical Scenarios (20) | 17 pass, 3 minor, 0 major |
 
 ![Quality](docs/figures/quality-bar.svg)
 ![Conversation Quality](docs/figures/conversation-bar.svg)
-
-## Sample Outputs
-
-Full conversation transcripts with per-turn judge scores are in [EXAMPLES.md](EXAMPLES.md). Categories covered:
-
-- Symptom exploration (panic disorder, somatic symptoms)
-- Treatment journeys (SSRIs, therapy options)
-- Diagnostic clarification (bipolar II vs MDD, PTSD vs C-PTSD)
-- Crisis escalation (passive ideation handled correctly with 988 routing)
-- Scope boundary testing (off-topic rejection)
-- Screener integration (PHQ-9, GAD-7 recommendations)
-- OCD/intrusive thoughts (sensitive content handled appropriately)
-- Bipolar vs BPD differential
-
-## Known Limitations
-
-- **Same-model judging.** Llama 3.3 70B evaluates its own outputs, which introduces self-preference bias.
-- **Single-turn hallucination rate is 27%.** The model supplements retrieved context with parametric knowledge. Multi-turn conversations drop this to 0% as conversation history anchors retrieval.
-- **Knowledge base is LLM-generated.** No clinical reviewer has validated the content. No update mechanism for DSM/ICD revisions.
-- **No inline citations.** Sources are shown in the UI sidebar, but there is no claim-to-chunk traceability.
-
-Full self-audit in the [technical paper](docs/moodspan-technical-paper.md).
 
 ## Failure Analysis
 
@@ -83,63 +140,54 @@ Full self-audit in the [technical paper](docs/moodspan-technical-paper.md).
 
 | Type | Count | Addressable |
 |---|---|---|
-| Query-term mismatch | 4 | Yes |
-| Ranking failure | 4 | Yes |
-| Embedding mismatch | 2 | Partially |
-| Data gap | 2 | No |
+| Query-term mismatch | 4 | Yes (synonym expansion) |
+| Ranking failure | 4 | Yes (RRF tuning) |
+| Embedding mismatch | 2 | Partially (domain embeddings) |
+| Data gap | 2 | No (out of scope) |
 
-80% of failures are engineering-fixable. 2 are genuine knowledge base gaps.
-
-## Safety
-
-| Layer | Mechanism | Deterministic |
-|---|---|---|
-| Input guard | 15+ injection/jailbreak patterns | Yes |
-| Safety classifier | 3-tier: crisis/caution/safe | Yes (crisis path) |
-| Constitutional | 9 behavioral principles | No (guides LLM) |
-| Output guard | Identity/prompt/diagnostic leak filtering | Yes |
-| Rate limit | 20/min + 200/day per IP (Upstash Redis) | Yes |
+80% of failures are engineering-fixable. The 2 data gaps are genuine knowledge base boundaries.
 
 ## Stack
 
-| | |
+| Layer | Technology |
 |---|---|
-| App | Next.js 16, React 19, TypeScript, Tailwind v4 |
-| LLM | Llama 3.3 70B (Groq), Claude Opus 4.6 (differential) |
-| Embeddings | MiniLM-L6-v2, 384-dim, local ONNX |
-| Vector DB | Neon Postgres + pgvector (IVFFlat) |
-| Cache/Rate limit | Upstash Redis |
-| Deploy | Vercel Pro, 66MB bundles (optimized from 243MB) |
-| Tests | 251 unit (Vitest) + E2E (Playwright) |
-| CI | GitHub Actions |
-
-## Eval Infrastructure
-
-12 evaluation scripts covering retrieval metrics, response quality, multi-turn conversations, hallucination detection, adversarial robustness, tool selection accuracy, and failure taxonomy. All results include bootstrap confidence intervals.
-
-Raw evaluation data is in [`eval/results/`](eval/results/).
+| Application | Next.js 16, React 19, TypeScript, Tailwind v4 |
+| LLM inference | Llama 3.3 70B (Groq), Claude Opus 4.6 (differential routing) |
+| Embeddings | MiniLM-L6-v2, 384-dim, local ONNX runtime |
+| Vector store | Neon Postgres + pgvector (IVFFlat, lists=100) |
+| Cache / rate limit | Upstash Redis |
+| Deployment | Vercel Pro, 66MB function bundles (optimized from 243MB) |
+| Testing | 251 unit tests (Vitest) + E2E (Playwright) |
+| CI/CD | GitHub Actions |
 
 ## Research Context
 
-This is an agentic RAG system: a bounded ReAct-pattern implementation with domain-specific constraints for clinical education.
+This is an agentic RAG system: a bounded ReAct-pattern implementation with domain-specific constraints for clinical education. Key design decisions were informed by:
 
-| Paper | Relevance |
+| Paper | How it informed the design |
 |---|---|
-| ReAct (Yao et al., [arXiv:2210.03629](https://arxiv.org/abs/2210.03629)) | Agentic loop pattern |
-| Self-RAG (Asai et al., [arXiv:2310.11511](https://arxiv.org/abs/2310.11511)) | Forced vs optional retrieval |
-| Toolformer (Schick et al., [arXiv:2302.04761](https://arxiv.org/abs/2302.04761)) | Tool-augmented LLMs, groundedness collapse |
-| RAGAS (ES et al., [arXiv:2309.15217](https://arxiv.org/abs/2309.15217)) | RAG evaluation framework |
-| MT-Bench (Zheng et al., [arXiv:2306.05685](https://arxiv.org/abs/2306.05685)) | LLM-as-judge methodology |
-| Constitutional AI (Bai et al., [arXiv:2212.08073](https://arxiv.org/abs/2212.08073)) | Behavioral alignment via principles |
-| CRAG (Yan et al., [arXiv:2401.15884](https://arxiv.org/abs/2401.15884)) | Corrective RAG, retrieval quality evaluation |
-| MedCPT (Wang et al., [arXiv:2307.00589](https://arxiv.org/abs/2307.00589)) | Domain-adapted clinical embeddings |
+| ReAct (Yao et al., [2210.03629](https://arxiv.org/abs/2210.03629)) | Agentic loop: interleave reasoning and tool calls |
+| Self-RAG (Asai et al., [2310.11511](https://arxiv.org/abs/2310.11511)) | Forced retrieval on round 1; optional on subsequent rounds |
+| Toolformer (Schick et al., [2302.04761](https://arxiv.org/abs/2302.04761)) | Groundedness collapse when tools are optional |
+| RAGAS (ES et al., [2309.15217](https://arxiv.org/abs/2309.15217)) | Eval framework: faithfulness, relevance, context metrics |
+| MT-Bench (Zheng et al., [2306.05685](https://arxiv.org/abs/2306.05685)) | LLM-as-judge for multi-turn quality scoring |
+| Constitutional AI (Bai et al., [2212.08073](https://arxiv.org/abs/2212.08073)) | 9 behavioral principles without a separate API call |
+| CRAG (Yan et al., [2401.15884](https://arxiv.org/abs/2401.15884)) | Corrective RAG patterns, retrieval quality thresholds |
+| Gorilla (Patil et al., [2305.15334](https://arxiv.org/abs/2305.15334)) | Tool selection accuracy, API hallucination reduction |
+
+## Known Limitations
+
+- **Same-model judging.** Llama 3.3 70B evaluates its own outputs, introducing self-preference bias.
+- **Single-turn hallucination rate is 27%.** The model supplements retrieved context with parametric knowledge. Multi-turn drops to 0% as conversation history anchors retrieval.
+- **Knowledge base is LLM-generated.** No clinical reviewer has validated the content.
+- **No inline citations.** Sources are shown in the UI but there is no claim-to-chunk traceability.
 
 ## Open Questions
 
-- Does forcing tool use on round 1 measurably reduce hallucination vs optional retrieval? (Infrastructure exists, A/B designed but not run)
-- How does retrieval quality change across conversation turns? (40-scenario eval dataset ready)
-- Would domain-adapted embeddings (PubMedBERT, BioLORD) improve long-tail clinical queries vs general-purpose MiniLM?
-- Can constitutional principle ablation identify which rules contribute most to safety and response quality?
+- Does forcing tool use on round 1 measurably reduce hallucination vs optional retrieval? (A/B infrastructure exists, not yet run)
+- Would domain-adapted embeddings (PubMedBERT, BioLORD) improve long-tail clinical queries?
+- Can constitutional principle ablation identify which of the 9 rules contribute most to safety?
+- How does retrieval quality degrade across conversation turns? (40-scenario dataset ready)
 
 ---
 
