@@ -230,8 +230,23 @@ eval/
 
 - **Forced vs optional retrieval:** Does forcing tool use measurably reduce hallucination? Infrastructure exists, human eval doesn't.
 - **Long-tail clinical retrieval:** No systematic analysis of rare vs common conditions, synonym drift, culture-bound syndromes.
-- **Domain-adapted embeddings:** MiniLM is general-purpose. Clinical fine-tuning would likely help long-tail.
+- **Domain-adapted embeddings:** MiniLM is general-purpose. Clinical fine-tuning (PubMedBERT, BioLORD) would likely help long-tail queries.
+- **Multi-turn groundedness decay:** Does retrieval quality degrade across conversation turns? 40-scenario dataset ready.
 - **Eval framework for scoped educational assistants:** 12 scripts exist but no external validation or inter-annotator agreement.
+
+---
+
+## Related Work & References
+
+Architecture and evaluation decisions are informed by:
+
+- **Hybrid retrieval:** Reciprocal Rank Fusion for combining dense/sparse signals. [Cormack et al., 2009]
+- **RAG evaluation:** RAGAS framework for automated eval of retrieval-augmented systems. [ES et al., arXiv:2309.15217]
+- **Tool-augmented LLMs:** Toolformer's approach to tool-calling; ReAct for reasoning + acting loops. [Schick et al., arXiv:2302.04761] [Yao et al., arXiv:2210.03629]
+- **LLM-as-judge:** MT-Bench methodology for automated response quality scoring. [Zheng et al., arXiv:2306.05685]
+- **AI safety taxonomy:** Risk categorization for language model deployments. [Weidinger et al., arXiv:2112.04359]
+- **Clinical NLP:** MedCPT for domain-specific retrieval in biomedical text. [Wang et al., arXiv:2307.00589]
+- **Agentic AI (2025-2026):** Bounded tool-calling with forced retrieval on round 1, cost-aware model routing (Groq for throughput, Claude Opus for complex reasoning), constitutional principles as alignment mechanism without separate API calls.
 
 ---
 
