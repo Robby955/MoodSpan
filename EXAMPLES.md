@@ -1,6 +1,6 @@
 # Kira: Sample Outputs
 
-Real responses from the eval pipeline. Model: Llama 3.3 70B (Groq). All queries run through the full production pipeline — safety classifier, hybrid retrieval, agentic tool loop, constitutional principles, output guard.
+Real responses from the production pipeline. All queries run through the full pipeline — safety classifier, hybrid retrieval, agentic tool loop, constitutional principles, output guard.
 
 Judge scores (1-5) from automated LLM evaluation. Not human-verified.
 

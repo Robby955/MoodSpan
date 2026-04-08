@@ -39,8 +39,8 @@ flowchart TB
         QR --> QE[Clinical Synonym Expansion<br/><i>80+ mappings</i>]
         QE --> VEC[Dense: Sentence Embeddings<br/><i>384-dim, ONNX</i>]
         QE --> BM[Sparse: BM25<br/><i>~12k chunks</i>]
-        VEC & BM --> RRF[Reciprocal Rank Fusion<br/><i>60/40 weighting</i>]
-        RRF --> TOP[Top-k Results]
+        VEC & BM --> WSF[Weighted Score Fusion<br/><i>60/40 weighting</i>]
+        WSF --> TOP[Top-k Results]
     end
 
     subgraph Storage["Data Layer"]
@@ -62,15 +62,15 @@ flowchart TB
     style Storage fill:#faf5ff,stroke:#9333ea
 ```
 
-Round 1 forces tool use (`tool_choice: "required"`) to guarantee retrieval before generation. Subsequent rounds use `tool_choice: "auto"`, allowing the model to reason over already-retrieved context without redundant searches. The loop is bounded to 3 rounds maximum.
+The system prompt strongly instructs the model to always search before answering. `tool_choice: "auto"` allows the model to skip redundant searches on follow-up rounds when context is already retrieved. The loop is bounded to 3 rounds maximum.
 
 ## Retrieval Pipeline
 
-Hybrid dense-sparse fusion with Reciprocal Rank Fusion (Cormack et al., 2009). The dense path runs sentence embeddings (384-dim, local ONNX inference) against a pgvector IVFFlat index. The sparse path runs BM25 with clinical synonym expansion (80+ domain-specific mappings). RRF merges the two ranked lists with 60/40 dense-sparse weighting.
+Hybrid dense-sparse fusion with weighted score normalization. The dense path runs sentence embeddings (384-dim, local ONNX inference) against a pgvector IVFFlat index. The sparse path runs BM25 with clinical synonym expansion (80+ domain-specific mappings). Scores are normalized to [0,1] per path and merged with 60/40 dense-sparse weighting.
 
 Multi-turn context is handled by query rewriting: a heuristic path extracts clinical terms from the last 4 messages (0ms, $0), with an LLM fallback for very short queries (~100ms).
 
-**Ablation results** on held-out test set (n=107, 70/30 split, bootstrap 95% CIs, 2,000 iterations):
+**Ablation results** on held-out test set (n=94 retrieval queries from 107 total, 70/30 split, bootstrap 95% CIs, 2,000 iterations):
 
 | Configuration | Recall@5 | MRR | NDCG@10 |
 |---|---|---|---|
@@ -115,7 +115,7 @@ Seven evaluation scripts with bootstrap confidence intervals on every metric:
 | `benchmark-eval.ts` | External benchmark eval (MedMCQA-Psychiatry) |
 | `generate-gold-qa.ts` | Gold Q&A generation from structured data |
 
-**Response quality** (LLM-as-judge) across 40 multi-turn conversations (127 total turns). Scored by the same model that generates responses — see Limitations for self-preference bias:
+**Multi-turn conversation quality** (LLM-as-judge, 40 scenarios, 127 total turns). Scored by the same model that generates responses — see Limitations for self-preference bias:
 
 | Metric | Score |
 |---|---|
@@ -128,7 +128,7 @@ Seven evaluation scripts with bootstrap confidence intervals on every metric:
 
 | Exam | Score |
 |---|---|
-| Extended Psychiatric (80 MCQ) | 92.5% |
+| Extended Multi-Section (80 MCQ) | 92.5% |
 | Hard Psychiatric (50 MCQ) | 94.0% |
 | Ethics and Legal (30 MCQ) | 100% answered correctly; 11 safety-filtered (correctly refused) |
 | Written Clinical Scenarios (20) | 17 pass, 3 minor issues, 0 major failures |
@@ -178,8 +178,8 @@ This is a tool-augmented RAG system: a bounded multi-step implementation with do
 
 | Paper | How it informed the design |
 |---|---|
-| Toolformer (Schick et al., [2302.04761](https://arxiv.org/abs/2302.04761)) | Groundedness collapse when tools are optional — motivated forced retrieval |
-| Self-RAG (Asai et al., [2310.11511](https://arxiv.org/abs/2310.11511)) | Forced retrieval on round 1; optional on subsequent rounds |
+| Toolformer (Schick et al., [2302.04761](https://arxiv.org/abs/2302.04761)) | Groundedness collapse when tools are optional — motivated strong retrieval instruction |
+| Self-RAG (Asai et al., [2310.11511](https://arxiv.org/abs/2310.11511)) | Retrieval-first design; system prompt enforces search before generation |
 | RAGAS (ES et al., [2309.15217](https://arxiv.org/abs/2309.15217)) | Eval framework: faithfulness, relevance, context metrics |
 | MT-Bench (Zheng et al., [2306.05685](https://arxiv.org/abs/2306.05685)) | LLM-as-judge for multi-turn quality scoring |
 | Constitutional AI (Bai et al., [2212.08073](https://arxiv.org/abs/2212.08073)) | 9 behavioral principles without a separate API call |
