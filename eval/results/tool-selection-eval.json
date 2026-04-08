@@ -1,0 +1,630 @@
+{
+  "timestamp": "2026-04-06T01:21:23.917Z",
+  "summary": {
+    "total": 31,
+    "route_accuracy": 1,
+    "route_correct": 31
+  },
+  "by_category": {
+    "greeting": {
+      "correct": 8,
+      "total": 8
+    },
+    "off_topic": {
+      "correct": 6,
+      "total": 6
+    },
+    "simple_clinical": {
+      "correct": 6,
+      "total": 6
+    },
+    "comparison": {
+      "correct": 3,
+      "total": 3
+    },
+    "screener_request": {
+      "correct": 3,
+      "total": 3
+    },
+    "condition_info": {
+      "correct": 2,
+      "total": 2
+    },
+    "clinical_ambiguous": {
+      "correct": 3,
+      "total": 3
+    }
+  },
+  "results": [
+    {
+      "id": "ts_001",
+      "query": "Hi",
+      "category": "greeting",
+      "expected_route": "greeting",
+      "actual_route": "greeting",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "Hey! I'm here to help with clinical mental health questions. What's on your mind"
+    },
+    {
+      "id": "ts_002",
+      "query": "Hello there!",
+      "category": "greeting",
+      "expected_route": "greeting",
+      "actual_route": "greeting",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "Hello! I'm Aura, MoodSpan's clinical assistant. I can help with questions about "
+    },
+    {
+      "id": "ts_003",
+      "query": "Hey",
+      "category": "greeting",
+      "expected_route": "greeting",
+      "actual_route": "greeting",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "Hello! I'm Aura, MoodSpan's clinical assistant. I can help with questions about "
+    },
+    {
+      "id": "ts_004",
+      "query": "Thanks!",
+      "category": "greeting",
+      "expected_route": "greeting",
+      "actual_route": "greeting",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "Happy to help! Feel free to ask anything else about mental health."
+    },
+    {
+      "id": "ts_005",
+      "query": "Thank you so much",
+      "category": "greeting",
+      "expected_route": "greeting",
+      "actual_route": "greeting",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "You're welcome! Let me know if you have any other mental health questions."
+    },
+    {
+      "id": "ts_006",
+      "query": "Goodbye",
+      "category": "greeting",
+      "expected_route": "greeting",
+      "actual_route": "greeting",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "Take care! Come back anytime you have mental health questions."
+    },
+    {
+      "id": "ts_007",
+      "query": "Ok",
+      "category": "greeting",
+      "expected_route": "greeting",
+      "actual_route": "greeting",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "Let me know if you have any mental health questions!"
+    },
+    {
+      "id": "ts_008",
+      "query": "Good morning",
+      "category": "greeting",
+      "expected_route": "greeting",
+      "actual_route": "greeting",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "Hi there! What mental health topic can I help you with today?"
+    },
+    {
+      "id": "ts_010",
+      "query": "What is 2 + 2?",
+      "category": "off_topic",
+      "expected_route": "off_topic",
+      "actual_route": "off_topic",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "I only cover mental health topics — conditions, symptoms, treatments, and screen"
+    },
+    {
+      "id": "ts_011",
+      "query": "What is the capital of France?",
+      "category": "off_topic",
+      "expected_route": "off_topic",
+      "actual_route": "off_topic",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "I only cover mental health topics — conditions, symptoms, treatments, and screen"
+    },
+    {
+      "id": "ts_012",
+      "query": "Write me a Python script",
+      "category": "off_topic",
+      "expected_route": "off_topic",
+      "actual_route": "off_topic",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "I only cover mental health topics — conditions, symptoms, treatments, and screen"
+    },
+    {
+      "id": "ts_013",
+      "query": "Who won the Super Bowl?",
+      "category": "off_topic",
+      "expected_route": "off_topic",
+      "actual_route": "off_topic",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "I only cover mental health topics — conditions, symptoms, treatments, and screen"
+    },
+    {
+      "id": "ts_014",
+      "query": "What's the weather like today?",
+      "category": "off_topic",
+      "expected_route": "off_topic",
+      "actual_route": "off_topic",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "I only cover mental health topics — conditions, symptoms, treatments, and screen"
+    },
+    {
+      "id": "ts_015",
+      "query": "How do I cook pasta?",
+      "category": "off_topic",
+      "expected_route": "off_topic",
+      "actual_route": "off_topic",
+      "route_correct": true,
+      "expected_tools": [],
+      "direct_response": "I only cover mental health topics — conditions, symptoms, treatments, and screen"
+    },
+    {
+      "id": "ts_020",
+      "query": "What is depression?",
+      "category": "simple_clinical",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_021",
+      "query": "What are the symptoms of PTSD?",
+      "category": "simple_clinical",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_022",
+      "query": "How does CBT work?",
+      "category": "simple_clinical",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_023",
+      "query": "What is the PHQ-9?",
+      "category": "simple_clinical",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_024",
+      "query": "Tell me about bipolar disorder",
+      "category": "simple_clinical",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_025",
+      "query": "What medications are used for anxiety?",
+      "category": "simple_clinical",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_030",
+      "query": "Compare PTSD and complex PTSD",
+      "category": "comparison",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "compare_conditions",
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_031",
+      "query": "What's the difference between BPD and bipolar?",
+      "category": "comparison",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "compare_conditions",
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_032",
+      "query": "SSRIs vs SNRIs",
+      "category": "comparison",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_040",
+      "query": "What screener should I take for depression?",
+      "category": "screener_request",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "suggest_screeners"
+      ]
+    },
+    {
+      "id": "ts_041",
+      "query": "Is there an anxiety assessment I can do?",
+      "category": "screener_request",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "suggest_screeners"
+      ]
+    },
+    {
+      "id": "ts_042",
+      "query": "I've been having nightmares and flashbacks, is there a test?",
+      "category": "screener_request",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "suggest_screeners",
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_050",
+      "query": "What are the rule-outs for ADHD?",
+      "category": "condition_info",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "get_condition_info",
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_051",
+      "query": "What screeners exist for depression?",
+      "category": "condition_info",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "get_condition_info",
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_060",
+      "query": "I feel sad",
+      "category": "clinical_ambiguous",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_061",
+      "query": "Help",
+      "category": "clinical_ambiguous",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    },
+    {
+      "id": "ts_062",
+      "query": "What should I do?",
+      "category": "clinical_ambiguous",
+      "expected_route": "clinical",
+      "actual_route": "clinical",
+      "route_correct": true,
+      "expected_tools": [
+        "search_knowledge_base"
+      ]
+    }
+  ],
+  "test_cases_with_expected_tools": [
+    {
+      "id": "ts_001",
+      "query": "Hi",
+      "category": "greeting",
+      "expected_tools": [],
+      "expected_route": "greeting"
+    },
+    {
+      "id": "ts_002",
+      "query": "Hello there!",
+      "category": "greeting",
+      "expected_tools": [],
+      "expected_route": "greeting"
+    },
+    {
+      "id": "ts_003",
+      "query": "Hey",
+      "category": "greeting",
+      "expected_tools": [],
+      "expected_route": "greeting"
+    },
+    {
+      "id": "ts_004",
+      "query": "Thanks!",
+      "category": "greeting",
+      "expected_tools": [],
+      "expected_route": "greeting"
+    },
+    {
+      "id": "ts_005",
+      "query": "Thank you so much",
+      "category": "greeting",
+      "expected_tools": [],
+      "expected_route": "greeting"
+    },
+    {
+      "id": "ts_006",
+      "query": "Goodbye",
+      "category": "greeting",
+      "expected_tools": [],
+      "expected_route": "greeting"
+    },
+    {
+      "id": "ts_007",
+      "query": "Ok",
+      "category": "greeting",
+      "expected_tools": [],
+      "expected_route": "greeting"
+    },
+    {
+      "id": "ts_008",
+      "query": "Good morning",
+      "category": "greeting",
+      "expected_tools": [],
+      "expected_route": "greeting"
+    },
+    {
+      "id": "ts_010",
+      "query": "What is 2 + 2?",
+      "category": "off_topic",
+      "expected_tools": [],
+      "expected_route": "off_topic"
+    },
+    {
+      "id": "ts_011",
+      "query": "What is the capital of France?",
+      "category": "off_topic",
+      "expected_tools": [],
+      "expected_route": "off_topic"
+    },
+    {
+      "id": "ts_012",
+      "query": "Write me a Python script",
+      "category": "off_topic",
+      "expected_tools": [],
+      "expected_route": "off_topic"
+    },
+    {
+      "id": "ts_013",
+      "query": "Who won the Super Bowl?",
+      "category": "off_topic",
+      "expected_tools": [],
+      "expected_route": "off_topic"
+    },
+    {
+      "id": "ts_014",
+      "query": "What's the weather like today?",
+      "category": "off_topic",
+      "expected_tools": [],
+      "expected_route": "off_topic"
+    },
+    {
+      "id": "ts_015",
+      "query": "How do I cook pasta?",
+      "category": "off_topic",
+      "expected_tools": [],
+      "expected_route": "off_topic"
+    },
+    {
+      "id": "ts_020",
+      "query": "What is depression?",
+      "category": "simple_clinical",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_021",
+      "query": "What are the symptoms of PTSD?",
+      "category": "simple_clinical",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_022",
+      "query": "How does CBT work?",
+      "category": "simple_clinical",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_023",
+      "query": "What is the PHQ-9?",
+      "category": "simple_clinical",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_024",
+      "query": "Tell me about bipolar disorder",
+      "category": "simple_clinical",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_025",
+      "query": "What medications are used for anxiety?",
+      "category": "simple_clinical",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_030",
+      "query": "Compare PTSD and complex PTSD",
+      "category": "comparison",
+      "expected_tools": [
+        "compare_conditions",
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_031",
+      "query": "What's the difference between BPD and bipolar?",
+      "category": "comparison",
+      "expected_tools": [
+        "compare_conditions",
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_032",
+      "query": "SSRIs vs SNRIs",
+      "category": "comparison",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_040",
+      "query": "What screener should I take for depression?",
+      "category": "screener_request",
+      "expected_tools": [
+        "suggest_screeners"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_041",
+      "query": "Is there an anxiety assessment I can do?",
+      "category": "screener_request",
+      "expected_tools": [
+        "suggest_screeners"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_042",
+      "query": "I've been having nightmares and flashbacks, is there a test?",
+      "category": "screener_request",
+      "expected_tools": [
+        "suggest_screeners",
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_050",
+      "query": "What are the rule-outs for ADHD?",
+      "category": "condition_info",
+      "expected_tools": [
+        "get_condition_info",
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_051",
+      "query": "What screeners exist for depression?",
+      "category": "condition_info",
+      "expected_tools": [
+        "get_condition_info",
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_060",
+      "query": "I feel sad",
+      "category": "clinical_ambiguous",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_061",
+      "query": "Help",
+      "category": "clinical_ambiguous",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    },
+    {
+      "id": "ts_062",
+      "query": "What should I do?",
+      "category": "clinical_ambiguous",
+      "expected_tools": [
+        "search_knowledge_base"
+      ],
+      "expected_route": "clinical"
+    }
+  ]
+}

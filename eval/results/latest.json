@@ -1,0 +1,5337 @@
+{
+  "timestamp": "2026-04-04T21:49:47.731Z",
+  "config": {
+    "with_llm": false,
+    "search_top_k": 10,
+    "total_queries": 107,
+    "split": "test",
+    "decompose": true,
+    "bm25_only": false,
+    "no_expand": false,
+    "rerank": false,
+    "label": "hybrid-decompose"
+  },
+  "aggregate": {
+    "recall_at_3": 0.898936170212766,
+    "recall_at_5": 0.9202127659574468,
+    "recall_at_8": 0.9308510638297872,
+    "mrr": 0.8770685579196217,
+    "ndcg_at_10": 0.8789281905463966,
+    "avg_latency_ms": 91.32710280373831
+  },
+  "bootstrap_ci": {
+    "recall_at_3": {
+      "mean": 0.898936170212766,
+      "ci_low": 0.8457446808510638,
+      "ci_high": 0.9468085106382979
+    },
+    "recall_at_5": {
+      "mean": 0.9202127659574468,
+      "ci_low": 0.8723404255319149,
+      "ci_high": 0.9680851063829787
+    },
+    "recall_at_8": {
+      "mean": 0.9308510638297872,
+      "ci_low": 0.8776595744680851,
+      "ci_high": 0.973404255319149
+    },
+    "mrr": {
+      "mean": 0.8770685579196217,
+      "ci_low": 0.8191489361702128,
+      "ci_high": 0.9290780141843971
+    },
+    "ndcg_at_10": {
+      "mean": 0.8789281905463966,
+      "ci_low": 0.8264502288089087,
+      "ci_high": 0.9245317991664513
+    }
+  },
+  "by_category": {
+    "scope": {
+      "count": 34,
+      "recall_at_3": 0.9705882352941176,
+      "recall_at_5": 0.9705882352941176,
+      "recall_at_8": 0.9705882352941176,
+      "mrr": 0.9117647058823529,
+      "ndcg_at_10": 0.9271682063025244
+    },
+    "clinical_depth": {
+      "count": 41,
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.9308943089430896,
+      "ndcg_at_10": 0.9486046161149847
+    },
+    "differential": {
+      "count": 14,
+      "recall_at_3": 0.6785714285714286,
+      "recall_at_5": 0.8214285714285714,
+      "recall_at_8": 0.8928571428571429,
+      "mrr": 0.9166666666666666,
+      "ndcg_at_10": 0.8144079743355065
+    },
+    "safety": {
+      "count": 9,
+      "recall_at_3": 0,
+      "recall_at_5": 0,
+      "recall_at_8": 0,
+      "mrr": 0,
+      "ndcg_at_10": 0
+    },
+    "edge_case": {
+      "count": 9,
+      "recall_at_3": 0.2,
+      "recall_at_5": 0.2,
+      "recall_at_8": 0.2,
+      "mrr": 0.08888888888888888,
+      "ndcg_at_10": 0.16020599913279626
+    }
+  },
+  "by_difficulty": {
+    "hard": {
+      "count": 46,
+      "recall_at_3": 0.8953488372093024,
+      "recall_at_5": 0.9418604651162791,
+      "recall_at_8": 0.9651162790697675,
+      "mrr": 0.9224806201550387
+    },
+    "easy": {
+      "count": 26,
+      "recall_at_3": 0.8947368421052632,
+      "recall_at_5": 0.8947368421052632,
+      "recall_at_8": 0.8947368421052632,
+      "mrr": 0.8421052631578947
+    },
+    "medium": {
+      "count": 35,
+      "recall_at_3": 0.90625,
+      "recall_at_5": 0.90625,
+      "recall_at_8": 0.90625,
+      "mrr": 0.8368055555555556
+    }
+  },
+  "queries": [
+    {
+      "id": "eval_356",
+      "question": "When does Panic Disorder become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.6309297535714575,
+      "top_results": [
+        {
+          "id": "article:symptoms/panic-attack-vs-heart-attack#conditions-commonly-associated-with-panic-attacks",
+          "slug": "panic-attack-vs-heart-attack",
+          "score": 0.9512779443936613,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/panic_disorder#related-conditions",
+          "slug": "panic_disorder",
+          "score": 0.9458934059409349,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/panic_disorder#when-to-seek-professional-help",
+          "slug": "panic_disorder",
+          "score": 0.9358661328414977,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/panic-attack-vs-heart-attack#when-it-s-normal-vs-when-to-worry",
+          "slug": "panic-attack-vs-heart-attack",
+          "score": 0.9119199030349157,
+          "source": "article"
+        },
+        {
+          "id": "dsm5:panic-disorder:criteria",
+          "score": 0.9108986268884307,
+          "source": "dsm5"
+        }
+      ],
+      "expected_slugs": [
+        "panic_disorder"
+      ],
+      "latency_ms": 487,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_235",
+      "question": "What is Binge-Eating Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/binge_eating_disorder#what-is-binge-eating-disorder",
+          "slug": "binge_eating_disorder",
+          "score": 0.9812497028894107,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/binge_eating_disorder#key-symptoms-and-warning-signs",
+          "slug": "binge_eating_disorder",
+          "score": 0.9276524581238949,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/binge_eating_disorder#how-binge-eating-disorder-is-diagnosed",
+          "slug": "binge_eating_disorder",
+          "score": 0.8952183572609851,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/binge_eating_disorder#faq-is-binge-eating-disorder-the-same-as-food-addiction",
+          "slug": "binge_eating_disorder",
+          "score": 0.8849499681470919,
+          "source": "article"
+        },
+        {
+          "id": "npd:binge_eating_disorder:rule-outs",
+          "slug": "binge_eating_disorder",
+          "score": 0.882992028528319,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "binge_eating_disorder"
+      ],
+      "latency_ms": 91,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_358",
+      "question": "When does Agoraphobia become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:glossary/agoraphobia#relevance-to-mental-health-practice",
+          "slug": "agoraphobia",
+          "score": 0.908187959225963,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/agoraphobia#when-to-seek-professional-help",
+          "slug": "agoraphobia",
+          "score": 0.8821909744098473,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/agoraphobia#how-agoraphobia-is-diagnosed",
+          "slug": "agoraphobia",
+          "score": 0.8244895579539886,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/agoraphobia#what-is-agoraphobia",
+          "slug": "agoraphobia",
+          "score": 0.8157199875541055,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/agoraphobia#related-conditions",
+          "slug": "agoraphobia",
+          "score": 0.8112060862963777,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "agoraphobia"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_346",
+      "question": "When does Schizoaffective Disorder become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/schizoaffective_disorder#when-to-seek-professional-help",
+          "slug": "schizoaffective_disorder",
+          "score": 0.9119662733275508,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizoaffective_disorder#how-schizoaffective-disorder-is-diagnosed",
+          "slug": "schizoaffective_disorder",
+          "score": 0.8588501333992826,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/schizoaffective#definition",
+          "slug": "schizoaffective",
+          "score": 0.8184884719954849,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/schizoaffective#related-terms",
+          "slug": "schizoaffective",
+          "score": 0.8168952226990437,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizoaffective_disorder#related-conditions",
+          "slug": "schizoaffective_disorder",
+          "score": 0.803963867464502,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "schizoaffective_disorder"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_017",
+      "question": "What are the main features of Neurocognitive Disorder Due to Traumatic Brain Injury?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/neurocognitive_disorder_due_to_tbi#what-is-neurocognitive-disorder-due-to-traumatic-brain-injury",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.9622109684171548,
+          "source": "article"
+        },
+        {
+          "id": "npd:neurocognitive_disorder_due_to_tbi:core",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.9414539890745878,
+          "source": "non_pd"
+        },
+        {
+          "id": "npd:neurocognitive_disorder_due_to_tbi:rule-outs",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.898551711817837,
+          "source": "non_pd"
+        },
+        {
+          "id": "npd:neurocognitive_disorder_due_to_tbi:urgency",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.8783511221612216,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/neurocognitive_disorder_due_to_tbi#key-symptoms-and-warning-signs",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.86668044623098,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "neurocognitive_disorder_due_to_tbi"
+      ],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_001",
+      "question": "What is Paranoid Personality Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/paranoid_pd#overview-what-is-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.9842099799674742,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#faq-what-is-the-difference-between-being-paranoid-and-having-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.936184127308468,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/paranoia#clinical-context",
+          "slug": "paranoia",
+          "score": 0.891323118689,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#diagnosis-how-paranoid-personality-disorder-is-identified",
+          "slug": "paranoid_pd",
+          "score": 0.890146431870656,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#living-with-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.8894260153208593,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "paranoid_pd"
+      ],
+      "latency_ms": 82,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_387",
+      "question": "When does Bulimia Nervosa become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.6309297535714575,
+      "top_results": [
+        {
+          "id": "article:conditions/bulimia-nervosa-deep-dive#overview-of-bulimia-nervosa",
+          "slug": "bulimia-nervosa-deep-dive",
+          "score": 0.9899926023806148,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bulimia_nervosa#what-is-bulimia-nervosa",
+          "slug": "bulimia_nervosa",
+          "score": 0.8966354600345521,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bulimia-nervosa-deep-dive#differentiating-bulimia-nervosa-from-related-disorders",
+          "slug": "bulimia-nervosa-deep-dive",
+          "score": 0.8825281827007329,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bulimia_nervosa#how-bulimia-nervosa-is-diagnosed",
+          "slug": "bulimia_nervosa",
+          "score": 0.8820853856845379,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bulimia_nervosa#related-conditions",
+          "slug": "bulimia_nervosa",
+          "score": 0.8645093438110685,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "bulimia_nervosa"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_377",
+      "question": "When does Opioid Use Disorder become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/opioid_use_disorder#what-is-opioid-use-disorder",
+          "slug": "opioid_use_disorder",
+          "score": 0.9453909713984057,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#when-to-seek-professional-help",
+          "slug": "opioid_use_disorder",
+          "score": 0.9356593986259669,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#key-symptoms-and-warning-signs",
+          "slug": "opioid_use_disorder",
+          "score": 0.9076633125483995,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#how-opioid-use-disorder-is-diagnosed",
+          "slug": "opioid_use_disorder",
+          "score": 0.8974763887252715,
+          "source": "article"
+        },
+        {
+          "id": "dsm5:opioid-withdrawal:criteria",
+          "score": 0.879729024793997,
+          "source": "dsm5"
+        }
+      ],
+      "expected_slugs": [
+        "opioid_use_disorder"
+      ],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_025",
+      "question": "What screeners exist for ADHD in adults?",
+      "category": "scope",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/adhd-in-adults-deep-dive#how-adhd-presents-differently-in-adults",
+          "slug": "adhd-in-adults-deep-dive",
+          "score": 0.8247621947803105,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/adhd#evidence-based-treatments",
+          "slug": "adhd",
+          "score": 0.7693425711032189,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/adhd-in-adults#why-adhd-in-adults-is-so-often-missed",
+          "slug": "adhd-in-adults",
+          "score": 0.7502206446166784,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/adhd#prognosis-and-long-term-outcomes",
+          "slug": "adhd",
+          "score": 0.7487288874719762,
+          "source": "article"
+        },
+        {
+          "id": "article:screeners/asrs#what-does-the-asrs-measure",
+          "slug": "asrs",
+          "score": 0.7191148816489615,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "adhd"
+      ],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_211",
+      "question": "What is Agoraphobia?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/agoraphobia#what-is-agoraphobia",
+          "slug": "agoraphobia",
+          "score": 0.9774333114482552,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/agoraphobia#clinical-context",
+          "slug": "agoraphobia",
+          "score": 0.9522882982702476,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/agoraphobia#relevance-to-mental-health-practice",
+          "slug": "agoraphobia",
+          "score": 0.9370194936399362,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/agoraphobia#related-terms",
+          "slug": "agoraphobia",
+          "score": 0.9227707895038626,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/agoraphobia#causes-and-risk-factors",
+          "slug": "agoraphobia",
+          "score": 0.9123966297972037,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "agoraphobia"
+      ],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_234",
+      "question": "What is Bulimia Nervosa?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.6309297535714575,
+      "top_results": [
+        {
+          "id": "article:conditions/bulimia-nervosa-deep-dive#overview-of-bulimia-nervosa",
+          "slug": "bulimia-nervosa-deep-dive",
+          "score": 0.980236484266223,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bulimia_nervosa#what-is-bulimia-nervosa",
+          "slug": "bulimia_nervosa",
+          "score": 0.9443454590141863,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bulimia-nervosa-deep-dive#differentiating-bulimia-nervosa-from-related-disorders",
+          "slug": "bulimia-nervosa-deep-dive",
+          "score": 0.8802099085978194,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bulimia_nervosa#related-conditions",
+          "slug": "bulimia_nervosa",
+          "score": 0.8652307115489635,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bulimia_nervosa#how-bulimia-nervosa-is-diagnosed",
+          "slug": "bulimia_nervosa",
+          "score": 0.8521343630144357,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "bulimia_nervosa"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_372",
+      "question": "When does Delirium become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:delirium:urgency",
+          "slug": "delirium",
+          "score": 0.9853443544831083,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/delirium#faq-is-delirium-a-medical-emergency",
+          "slug": "delirium",
+          "score": 0.9329830794596908,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/delirium#when-to-seek-professional-help",
+          "slug": "delirium",
+          "score": 0.92314570296554,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/delirium#what-is-delirium",
+          "slug": "delirium",
+          "score": 0.8426087387464811,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/delirium#prognosis-and-recovery",
+          "slug": "delirium",
+          "score": 0.803484407687062,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "delirium"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_016",
+      "question": "What are the main features of Specific Learning Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/specific_learning_disorder#what-is-specific-learning-disorder",
+          "slug": "specific_learning_disorder",
+          "score": 0.9042525301693277,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#faq-what-is-the-difference-between-a-learning-disorder-and-a-learning-disability",
+          "slug": "specific_learning_disorder",
+          "score": 0.8488640984565611,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#when-to-seek-professional-help",
+          "slug": "specific_learning_disorder",
+          "score": 0.8396982088012139,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#causes-and-risk-factors",
+          "slug": "specific_learning_disorder",
+          "score": 0.8275867508643624,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#how-specific-learning-disorder-is-diagnosed",
+          "slug": "specific_learning_disorder",
+          "score": 0.7897016306345314,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "specific_learning_disorder"
+      ],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_354",
+      "question": "When does Cyclothymic Disorder become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/cyclothymic_disorder#when-to-seek-professional-help",
+          "slug": "cyclothymic_disorder",
+          "score": 1,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/cyclothymic_disorder#how-cyclothymic-disorder-is-diagnosed",
+          "slug": "cyclothymic_disorder",
+          "score": 0.9093169528224947,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/cyclothymic_disorder#prognosis-and-recovery",
+          "slug": "cyclothymic_disorder",
+          "score": 0.8961955587182928,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/cyclothymic_disorder#faq-how-is-cyclothymic-disorder-diagnosed",
+          "slug": "cyclothymic_disorder",
+          "score": 0.8889707616647353,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/cyclothymic_disorder#what-is-cyclothymic-disorder",
+          "slug": "cyclothymic_disorder",
+          "score": 0.8713250891412158,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "cyclothymic_disorder"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_366",
+      "question": "When does Adjustment Disorder become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/adjustment_disorder#prognosis-and-recovery",
+          "slug": "adjustment_disorder",
+          "score": 0.9351268441314367,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/adjustment_disorder#faq-how-long-does-adjustment-disorder-last",
+          "slug": "adjustment_disorder",
+          "score": 0.9243919223583943,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/adjustment_disorder#when-to-seek-professional-help",
+          "slug": "adjustment_disorder",
+          "score": 0.8454158092371874,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/adjustment_disorder#related-conditions",
+          "slug": "adjustment_disorder",
+          "score": 0.8201589907436815,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/adjustment_disorder#how-adjustment-disorder-is-diagnosed",
+          "slug": "adjustment_disorder",
+          "score": 0.8154619514064496,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "adjustment_disorder"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_362",
+      "question": "When does Hoarding Disorder become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/hoarding_disorder#when-to-seek-professional-help",
+          "slug": "hoarding_disorder",
+          "score": 0.9127740103343905,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/hoarding_disorder#faq-at-what-age-does-hoarding-disorder-usually-start",
+          "slug": "hoarding_disorder",
+          "score": 0.8499088249718939,
+          "source": "article"
+        },
+        {
+          "id": "npd:hoarding_disorder:urgency",
+          "slug": "hoarding_disorder",
+          "score": 0.8434547994634276,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/hoarding_disorder#prognosis-and-recovery",
+          "slug": "hoarding_disorder",
+          "score": 0.8421056102836908,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/hoarding_disorder#how-hoarding-disorder-is-diagnosed",
+          "slug": "hoarding_disorder",
+          "score": 0.8306511012609075,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "hoarding_disorder"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_004",
+      "question": "What is Antisocial Personality Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/antisocial_pd#overview-what-is-antisocial-personality-disorder",
+          "slug": "antisocial_pd",
+          "score": 0.9858123014981208,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/antisocial-personality-disorder#aspd-psychopathy-and-sociopathy-clarifying-the-terminology",
+          "slug": "antisocial-personality-disorder",
+          "score": 0.9533669925257006,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/antisocial_pd#subtypes-of-antisocial-personality-disorder",
+          "slug": "antisocial_pd",
+          "score": 0.9043060196317547,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/antisocial_pd#causes-and-risk-factors",
+          "slug": "antisocial_pd",
+          "score": 0.9033087800910132,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/antisocial-personality-disorder#developmental-trajectory-from-conduct-disorder-to-aspd",
+          "slug": "antisocial-personality-disorder",
+          "score": 0.8945142221013422,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "antisocial_pd"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_207",
+      "question": "What is Bipolar II Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/bipolar_ii_disorder#what-is-bipolar-ii-disorder",
+          "slug": "bipolar_ii_disorder",
+          "score": 0.9556248700109611,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar-ii-disorder-deep-dive#diagnostic-criteria-hypomania-vs-mania",
+          "slug": "bipolar-ii-disorder-deep-dive",
+          "score": 0.8071090144440298,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar_ii_disorder#key-symptoms-and-warning-signs",
+          "slug": "bipolar_ii_disorder",
+          "score": 0.8024566776742548,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/bipolar#definition",
+          "slug": "bipolar",
+          "score": 0.8015411010989577,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar-ii-disorder-deep-dive#the-diagnostic-challenge-a-decade-of-misdiagnosis",
+          "slug": "bipolar-ii-disorder-deep-dive",
+          "score": 0.7759059435363804,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "bipolar_ii_disorder"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_231",
+      "question": "What is Somatic Symptom Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/somatic_symptom_disorder#what-is-somatic-symptom-disorder",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.9632800097667338,
+          "source": "article"
+        },
+        {
+          "id": "npd:somatic_symptom_disorder:core",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.9189340050135866,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/somatic_symptom_disorder#how-somatic-symptom-disorder-is-diagnosed",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.9129956995109816,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/somatic_symptom_disorder#related-conditions",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.904846568997208,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/somatic#relevance-to-mental-health-practice",
+          "slug": "somatic",
+          "score": 0.8955677773682391,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "somatic_symptom_disorder"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_005",
+      "question": "What is Borderline Personality Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:glossary/borderline#related-terms",
+          "slug": "borderline",
+          "score": 0.9545290316448451,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/borderline_pd#overview-what-is-borderline-personality-disorder",
+          "slug": "borderline_pd",
+          "score": 0.9503118681385313,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/borderline#faq-what-does-borderline-actually-mean-in-mental-health",
+          "slug": "borderline",
+          "score": 0.9482573537758408,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/borderline#definition-of-borderline",
+          "slug": "borderline",
+          "score": 0.926761304375847,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/narcissistic-personality-disorder#faq-how-does-npd-differ-from-borderline-personality-disorder",
+          "slug": "narcissistic-personality-disorder",
+          "score": 0.8969240667436854,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "borderline_pd"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_361",
+      "question": "When does Body Dysmorphic Disorder become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:body_dysmorphic_disorder:urgency",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.9380137478544469,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/body_dysmorphic_disorder#when-to-seek-professional-help",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.9346110218478182,
+          "source": "article"
+        },
+        {
+          "id": "dsm5:body-dysmorphic-disorder:specifiers",
+          "score": 0.9090416524693178,
+          "source": "dsm5"
+        },
+        {
+          "id": "article:conditions/body_dysmorphic_disorder#how-body-dysmorphic-disorder-is-diagnosed",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.9043048682930563,
+          "source": "article"
+        },
+        {
+          "id": "npd:body_dysmorphic_disorder:rule-outs",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.8992986441225772,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "body_dysmorphic_disorder"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_376",
+      "question": "When does Alcohol Use Disorder become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/alcohol_use_disorder#when-to-seek-professional-help",
+          "slug": "alcohol_use_disorder",
+          "score": 0.885360374380673,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/alcohol_use_disorder#what-is-alcohol-use-disorder",
+          "slug": "alcohol_use_disorder",
+          "score": 0.8366778176241232,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/alcohol_use_disorder#related-conditions-and-complications",
+          "slug": "alcohol_use_disorder",
+          "score": 0.8298879877949156,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/alcohol_use_disorder#key-symptoms-and-warning-signs",
+          "slug": "alcohol_use_disorder",
+          "score": 0.8124104595936597,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/alcohol_use_disorder#evidence-based-treatments",
+          "slug": "alcohol_use_disorder",
+          "score": 0.7785380993296668,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "alcohol_use_disorder"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_359",
+      "question": "When does Specific Phobia become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:specific_phobia:urgency",
+          "slug": "specific_phobia",
+          "score": 0.9488010863083913,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/specific_phobia#how-common-is-specific-phobia",
+          "slug": "specific_phobia",
+          "score": 0.9040455332791002,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_phobia#key-symptoms-and-warning-signs",
+          "slug": "specific_phobia",
+          "score": 0.8817023652086051,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_phobia#when-to-seek-professional-help",
+          "slug": "specific_phobia",
+          "score": 0.8774443201490385,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_phobia#prognosis-and-recovery",
+          "slug": "specific_phobia",
+          "score": 0.8355374182572898,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "specific_phobia"
+      ],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_382",
+      "question": "When does Dissociative Amnesia become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/dissociative_amnesia#when-to-seek-professional-help",
+          "slug": "dissociative_amnesia",
+          "score": 0.9801932061635029,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/dissociative_amnesia#prognosis-and-recovery",
+          "slug": "dissociative_amnesia",
+          "score": 0.9373216597027012,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/dissociative_amnesia#how-dissociative-amnesia-is-diagnosed",
+          "slug": "dissociative_amnesia",
+          "score": 0.8914724323406243,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/dissociative_amnesia#faq-how-long-does-dissociative-amnesia-last",
+          "slug": "dissociative_amnesia",
+          "score": 0.8606854593737194,
+          "source": "article"
+        },
+        {
+          "id": "dsm5:dissociative-amnesia:criteria",
+          "score": 0.8590972362173573,
+          "source": "dsm5"
+        }
+      ],
+      "expected_slugs": [
+        "dissociative_amnesia"
+      ],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_029",
+      "question": "How is bipolar disorder screened?",
+      "category": "scope",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:glossary/bipolar#definition",
+          "slug": "bipolar",
+          "score": 0.8558892538779121,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/bipolar#relevance-to-mental-health-practice",
+          "slug": "bipolar",
+          "score": 0.8147032306489248,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar_i_disorder#what-is-bipolar-i-disorder",
+          "slug": "bipolar_i_disorder",
+          "score": 0.7933275127594728,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar_i_disorder#how-bipolar-i-disorder-is-diagnosed",
+          "slug": "bipolar_i_disorder",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "npd:bipolar_ii_disorder:screening",
+          "slug": "bipolar_ii_disorder",
+          "score": 0.5686103374723961,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "bipolar_i_disorder"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_011",
+      "question": "What are the main features of Schizophrenia?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/schizophrenia#related-conditions-and-differential-diagnosis",
+          "slug": "schizophrenia",
+          "score": 0.9843601095104437,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizophrenia-vs-schizoaffective#schizophrenia-psychosis-as-the-core-feature",
+          "slug": "schizophrenia-vs-schizoaffective",
+          "score": 0.9068075099830724,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizophrenia-vs-schizoaffective#faq-is-schizoaffective-disorder-a-form-of-schizophrenia",
+          "slug": "schizophrenia-vs-schizoaffective",
+          "score": 0.8969901732565687,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizoaffective_disorder#related-conditions",
+          "slug": "schizoaffective_disorder",
+          "score": 0.8901044209984974,
+          "source": "article"
+        },
+        {
+          "id": "npd:schizophrenia:rule-outs",
+          "slug": "schizophrenia",
+          "score": 0.8885163960112764,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "schizophrenia"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_204",
+      "question": "What is Major Depressive Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/major_depressive_disorder#what-is-major-depressive-disorder",
+          "slug": "major_depressive_disorder",
+          "score": 0.9598513723417662,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/dysthymia#related-terms",
+          "slug": "dysthymia",
+          "score": 0.8966932315560914,
+          "source": "article"
+        },
+        {
+          "id": "article:neuroscience/neuroscience-of-depression#beyond-the-chemical-imbalance-a-modern-view-of-depression-s-neuroscience",
+          "slug": "neuroscience-of-depression",
+          "score": 0.8546815136801715,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/clinical-depression#related-terms",
+          "slug": "clinical-depression",
+          "score": 0.8361349208558397,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/persistent_depressive_disorder#what-is-persistent-depressive-disorder-dysthymia",
+          "slug": "persistent_depressive_disorder",
+          "score": 0.8179333212973147,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "major_depressive_disorder"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_009",
+      "question": "What is Dependent Personality Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/dependent_pd#overview-what-is-dependent-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.9807697731553673,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#faq-what-does-therapy-for-dependent-personality-disorder-actually-look-like",
+          "slug": "dependent_pd",
+          "score": 0.8937924012599523,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#faq-can-you-develop-dependent-personality-disorder-later-in-life",
+          "slug": "dependent_pd",
+          "score": 0.8880530135855682,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#subtypes-of-dependent-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.8805168509350934,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#living-with-dependent-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.878015717063664,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "dependent_pd"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_370",
+      "question": "When does Specific Learning Disorder become a medical emergency?",
+      "category": "scope",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/specific_learning_disorder#faq-at-what-age-can-a-child-be-diagnosed-with-a-specific-learning-disorder",
+          "slug": "specific_learning_disorder",
+          "score": 0.9471505189589803,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#how-specific-learning-disorder-is-diagnosed",
+          "slug": "specific_learning_disorder",
+          "score": 0.8311242007223116,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#faq-what-is-the-difference-between-a-learning-disorder-and-a-learning-disability",
+          "slug": "specific_learning_disorder",
+          "score": 0.8228749443355938,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#causes-and-risk-factors",
+          "slug": "specific_learning_disorder",
+          "score": 0.7688870540840245,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#prognosis-and-long-term-outlook",
+          "slug": "specific_learning_disorder",
+          "score": 0.6,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "specific_learning_disorder"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_209",
+      "question": "What is Panic Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.6309297535714575,
+      "top_results": [
+        {
+          "id": "article:glossary/panic-attack#related-terms",
+          "slug": "panic-attack",
+          "score": 0.9296774787623718,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/panic_disorder#related-conditions",
+          "slug": "panic_disorder",
+          "score": 0.9238467475797154,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/panic_disorder#what-is-panic-disorder",
+          "slug": "panic_disorder",
+          "score": 0.9130943958596007,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/panic-attack#relevance-to-mental-health-practice",
+          "slug": "panic-attack",
+          "score": 0.8526411943060077,
+          "source": "article"
+        },
+        {
+          "id": "dsm5:panic-disorder:criteria",
+          "score": 0.8333931886895165,
+          "source": "dsm5"
+        }
+      ],
+      "expected_slugs": [
+        "panic_disorder"
+      ],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_014",
+      "question": "What are the main features of Obsessive-Compulsive Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/obsessive_compulsive_disorder#what-is-obsessive-compulsive-disorder",
+          "slug": "obsessive_compulsive_disorder",
+          "score": 0.8818110994460896,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/obsessive_compulsive_disorder#related-conditions",
+          "slug": "obsessive_compulsive_disorder",
+          "score": 0.827511970503022,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/ocpd#overview-what-is-obsessive-compulsive-personality-disorder",
+          "slug": "ocpd",
+          "score": 0.8270490250618279,
+          "source": "article"
+        },
+        {
+          "id": "article:neuroscience/neuroscience-of-ocd#introduction-ocd-is-a-brain-based-disorder",
+          "slug": "neuroscience-of-ocd",
+          "score": 0.8032286980924539,
+          "source": "article"
+        },
+        {
+          "id": "npd:obsessive_compulsive_disorder:rule-outs",
+          "slug": "obsessive_compulsive_disorder",
+          "score": 0.6,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "obsessive_compulsive_disorder"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_223",
+      "question": "What is Major Neurocognitive Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/major_neurocognitive_disorder#what-is-major-neurocognitive-disorder",
+          "slug": "major_neurocognitive_disorder",
+          "score": 0.992184925184599,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/major_neurocognitive_disorder#related-conditions",
+          "slug": "major_neurocognitive_disorder",
+          "score": 0.9370740838717104,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/major_neurocognitive_disorder#how-major-neurocognitive-disorder-is-diagnosed",
+          "slug": "major_neurocognitive_disorder",
+          "score": 0.877161158427147,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/major_neurocognitive_disorder#faq-what-is-the-difference-between-dementia-and-major-neurocognitive-disorder",
+          "slug": "major_neurocognitive_disorder",
+          "score": 0.824863286585394,
+          "source": "article"
+        },
+        {
+          "id": "npd:major_neurocognitive_disorder:rule-outs",
+          "slug": "major_neurocognitive_disorder",
+          "score": 0.8152953226345336,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "major_neurocognitive_disorder"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_226",
+      "question": "What is Opioid Use Disorder?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/opioid_use_disorder#what-is-opioid-use-disorder",
+          "slug": "opioid_use_disorder",
+          "score": 0.9797055662140057,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#related-conditions",
+          "slug": "opioid_use_disorder",
+          "score": 0.932439702911458,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#faq-what-is-the-difference-between-opioid-dependence-and-opioid-use-disorder",
+          "slug": "opioid_use_disorder",
+          "score": 0.9121788574887029,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#causes-and-risk-factors",
+          "slug": "opioid_use_disorder",
+          "score": 0.9003094968687376,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#how-common-is-opioid-use-disorder",
+          "slug": "opioid_use_disorder",
+          "score": 0.8913977815691929,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "opioid_use_disorder"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_027",
+      "question": "What is the PHQ-2?",
+      "category": "scope",
+      "difficulty": "easy",
+      "recall_at_3": 0,
+      "recall_at_5": 0,
+      "recall_at_8": 0,
+      "mrr": 0,
+      "ndcg_at_10": 0,
+      "top_results": [
+        {
+          "id": "article:screeners/phq-2#faq-what-is-the-difference-between-the-phq-2-and-phq-9",
+          "slug": "phq-2",
+          "score": 0.9886100998035916,
+          "source": "article"
+        },
+        {
+          "id": "article:screeners/phq-9#faq-what-is-the-difference-between-the-phq-2-and-phq-9",
+          "slug": "phq-9",
+          "score": 0.9720734483036325,
+          "source": "article"
+        },
+        {
+          "id": "article:screeners/phq-2#what-is-the-phq-2",
+          "slug": "phq-2",
+          "score": 0.9617470606976596,
+          "source": "article"
+        },
+        {
+          "id": "article:screeners/phq-2#what-does-the-phq-2-measure",
+          "slug": "phq-2",
+          "score": 0.9473936455147736,
+          "source": "article"
+        },
+        {
+          "id": "article:screeners/phq-2#faq-what-does-a-phq-2-score-of-3-mean",
+          "slug": "phq-2",
+          "score": 0.9070663249995827,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "phq2",
+        "major_depressive_disorder"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_260",
+      "question": "What are the symptoms of Autism Spectrum Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/autism_spectrum_disorder#related-and-co-occurring-conditions",
+          "slug": "autism_spectrum_disorder",
+          "score": 0.9385760985385909,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/autism_spectrum_disorder#what-is-autism-spectrum-disorder",
+          "slug": "autism_spectrum_disorder",
+          "score": 0.9338248925175807,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/autism_spectrum_disorder#how-common-is-autism-spectrum-disorder",
+          "slug": "autism_spectrum_disorder",
+          "score": 0.923998219197536,
+          "source": "article"
+        },
+        {
+          "id": "article:neuroscience/neuroscience-of-autism#introduction-understanding-autism-through-neuroscience",
+          "slug": "neuroscience-of-autism",
+          "score": 0.891517010377375,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/arfid#faq-is-arfid-related-to-autism",
+          "slug": "arfid",
+          "score": 0.878838516310099,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "autism_spectrum_disorder"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_039",
+      "question": "What are the Millon subtypes of Dependent Personality Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/dependent_pd#subtypes-of-dependent-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.9700580386122206,
+          "source": "article"
+        },
+        {
+          "id": "kb:dependent_pd:millon-accommodating-dependent",
+          "slug": "dependent_pd",
+          "score": 0.9507364459845727,
+          "source": "knowledge_base"
+        },
+        {
+          "id": "kb:dependent_pd:millon-immature-dependent",
+          "slug": "dependent_pd",
+          "score": 0.947040796800906,
+          "source": "knowledge_base"
+        },
+        {
+          "id": "kb:dependent_pd:millon-disquieted-dependent",
+          "slug": "dependent_pd",
+          "score": 0.9425741886283618,
+          "source": "knowledge_base"
+        },
+        {
+          "id": "source:wikipedia_dependent_pd_2026",
+          "score": 0.9061398370228182,
+          "source": "source_manifest"
+        }
+      ],
+      "expected_slugs": [
+        "dependent_pd"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_321",
+      "question": "What conditions should be ruled out when considering Anorexia Nervosa?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/anorexia_nervosa#how-anorexia-nervosa-is-diagnosed",
+          "slug": "anorexia_nervosa",
+          "score": 0.929246198987943,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/anorexia_nervosa#related-conditions",
+          "slug": "anorexia_nervosa",
+          "score": 0.9273992077223876,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/anorexia_nervosa#what-is-anorexia-nervosa",
+          "slug": "anorexia_nervosa",
+          "score": 0.8885525886668375,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/anorexia_nervosa#when-to-seek-professional-help",
+          "slug": "anorexia_nervosa",
+          "score": 0.8857079988263643,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/anorexia_nervosa#key-symptoms-and-warning-signs",
+          "slug": "anorexia_nervosa",
+          "score": 0.8630423108285589,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "anorexia_nervosa"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_242",
+      "question": "What are the symptoms of Major Depressive Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/major_depressive_disorder#what-is-major-depressive-disorder",
+          "slug": "major_depressive_disorder",
+          "score": 0.8840256923223053,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/signs-of-depression#conditions-commonly-associated-with-signs-of-depression",
+          "slug": "signs-of-depression",
+          "score": 0.878466164826781,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/major_depressive_disorder#related-conditions",
+          "slug": "major_depressive_disorder",
+          "score": 0.8723858743431296,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/major_depressive_disorder#faq-what-is-the-difference-between-feeling-sad-and-having-major-depressive-disorder",
+          "slug": "major_depressive_disorder",
+          "score": 0.8351710337548132,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/major_depressive_disorder#key-symptoms-and-warning-signs",
+          "slug": "major_depressive_disorder",
+          "score": 0.6,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "major_depressive_disorder"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_319",
+      "question": "What conditions should be ruled out when considering Illness Anxiety Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/illness_anxiety_disorder#how-illness-anxiety-disorder-is-diagnosed",
+          "slug": "illness_anxiety_disorder",
+          "score": 0.9805544284744063,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/health-anxiety#conditions-commonly-associated-with-health-anxiety",
+          "slug": "health-anxiety",
+          "score": 0.9211362618498218,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/illness_anxiety_disorder#related-conditions",
+          "slug": "illness_anxiety_disorder",
+          "score": 0.9103284893430587,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/anxiety-symptoms#conditions-commonly-associated-with-anxiety-symptoms",
+          "slug": "anxiety-symptoms",
+          "score": 0.7947441638556889,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/anxiety-symptoms#psychological-and-cognitive-symptoms-what-happens-in-your-mind",
+          "slug": "anxiety-symptoms",
+          "score": 0.7782098453544453,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "illness_anxiety_disorder"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_333",
+      "question": "What are the clinical features to look for in Dependent Personality Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/dependent_pd#faq-what-does-therapy-for-dependent-personality-disorder-actually-look-like",
+          "slug": "dependent_pd",
+          "score": 0.9461883410968891,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#subtypes-of-dependent-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.9383060341418521,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#causes-and-risk-factors",
+          "slug": "dependent_pd",
+          "score": 0.9179404224565677,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#overview-what-is-dependent-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.8923893138347887,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#living-with-dependent-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.867606731198372,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "dependent_pd"
+      ],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_298",
+      "question": "What conditions should be ruled out when considering Obsessive-Compulsive Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:obsessive_compulsive_disorder:rule-outs",
+          "slug": "obsessive_compulsive_disorder",
+          "score": 0.8401155091618527,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/obsessive_compulsive_disorder#related-conditions",
+          "slug": "obsessive_compulsive_disorder",
+          "score": 0.7760137601779087,
+          "source": "article"
+        },
+        {
+          "id": "kb:ocpd:comorbidity",
+          "slug": "ocpd",
+          "score": 0.5643417838634817,
+          "source": "knowledge_base"
+        },
+        {
+          "id": "npd:obsessive_compulsive_disorder:core",
+          "slug": "obsessive_compulsive_disorder",
+          "score": 0.5609992054041426,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/obsessive_compulsive_disorder#key-symptoms-and-warning-signs",
+          "slug": "obsessive_compulsive_disorder",
+          "score": 0.5546735862125335,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "obsessive_compulsive_disorder"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_343",
+      "question": "How does Dependent Personality Disorder affect daily functioning?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/dependent_pd#faq-can-you-develop-dependent-personality-disorder-later-in-life",
+          "slug": "dependent_pd",
+          "score": 0.9637637354240342,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#dsm-5-tr-diagnostic-criteria-and-core-features",
+          "slug": "dependent_pd",
+          "score": 0.9027513252329229,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#faq-can-dependent-personality-disorder-be-cured",
+          "slug": "dependent_pd",
+          "score": 0.8974039896758712,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#living-with-dependent-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.892358840324574,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#treatment-approaches",
+          "slug": "dependent_pd",
+          "score": 0.889106223222194,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "dependent_pd"
+      ],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_261",
+      "question": "What are the symptoms of Attention-Deficit/Hyperactivity Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/adhd#what-is-adhd-and-how-common-is-it",
+          "slug": "adhd",
+          "score": 0.9872923053619747,
+          "source": "article"
+        },
+        {
+          "id": "npd:adhd:rule-outs",
+          "slug": "adhd",
+          "score": 0.9342286176840554,
+          "source": "non_pd"
+        },
+        {
+          "id": "dsm5:unspecified-attention-deficit-hyperactivity-disorder:criteria",
+          "score": 0.9060717664023032,
+          "source": "dsm5"
+        },
+        {
+          "id": "npd:adhd:core",
+          "slug": "adhd",
+          "score": 0.9037816925166025,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:symptoms/adhd-in-adults#why-adhd-in-adults-is-so-often-missed",
+          "slug": "adhd-in-adults",
+          "score": 0.8462265370585413,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "adhd"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_274",
+      "question": "What are the symptoms of Depersonalization/Derealization Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.6309297535714575,
+      "top_results": [
+        {
+          "id": "article:symptoms/derealization-depersonalization#conditions-commonly-associated-with-derealization-and-depersonalization",
+          "slug": "derealization-depersonalization",
+          "score": 0.9955861646108888,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/depersonalization_derealization_disorder#how-depersonalization-derealization-disorder-is-diagnosed",
+          "slug": "depersonalization_derealization_disorder",
+          "score": 0.9468944357115805,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/depersonalization_derealization_disorder#prognosis-and-recovery",
+          "slug": "depersonalization_derealization_disorder",
+          "score": 0.914461793128659,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/depersonalization_derealization_disorder#what-is-depersonalization-derealization-disorder",
+          "slug": "depersonalization_derealization_disorder",
+          "score": 0.903332781320894,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/depersonalization_derealization_disorder#faq-can-depersonalization-go-away-on-its-own",
+          "slug": "depersonalization_derealization_disorder",
+          "score": 0.8805261654623566,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "depersonalization_derealization_disorder"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_291",
+      "question": "What conditions should be ruled out when considering Bipolar I Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/bipolar_i_disorder#how-bipolar-i-disorder-is-diagnosed",
+          "slug": "bipolar_i_disorder",
+          "score": 0.8442430130310645,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar_ii_disorder#how-bipolar-ii-disorder-is-diagnosed",
+          "slug": "bipolar_ii_disorder",
+          "score": 0.8003548140547152,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/bipolar#definition",
+          "slug": "bipolar",
+          "score": 0.7866967857857272,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar-ii-disorder-deep-dive#the-diagnostic-challenge-a-decade-of-misdiagnosis",
+          "slug": "bipolar-ii-disorder-deep-dive",
+          "score": 0.7802466809151621,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/bipolar#relevance-to-mental-health-practice",
+          "slug": "bipolar",
+          "score": 0.7793519672355793,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "bipolar_i_disorder"
+      ],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_329",
+      "question": "What are the clinical features to look for in Borderline Personality Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:glossary/borderline#related-terms",
+          "slug": "borderline",
+          "score": 0.967849599326296,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/dissociative_identity_disorder#faq-how-is-did-different-from-borderline-personality-disorder",
+          "slug": "dissociative_identity_disorder",
+          "score": 0.9389090438112564,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/narcissistic-personality-disorder#faq-how-does-npd-differ-from-borderline-personality-disorder",
+          "slug": "narcissistic-personality-disorder",
+          "score": 0.930637331151051,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/borderline_pd#subtypes-of-borderline-personality-disorder",
+          "slug": "borderline_pd",
+          "score": 0.9145851546998893,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/borderline_pd#how-borderline-personality-disorder-is-diagnosed",
+          "slug": "borderline_pd",
+          "score": 0.9122855727476127,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "borderline_pd"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_045",
+      "question": "What conditions commonly co-occur with Borderline Personality Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.6309297535714575,
+      "top_results": [
+        {
+          "id": "article:conditions/dissociative_identity_disorder#faq-how-is-did-different-from-borderline-personality-disorder",
+          "slug": "dissociative_identity_disorder",
+          "score": 0.9313613769089418,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/borderline_pd#comorbid-conditions",
+          "slug": "borderline_pd",
+          "score": 0.9276320337336094,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/borderline#related-terms",
+          "slug": "borderline",
+          "score": 0.9215144746757926,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/narcissistic-personality-disorder#faq-how-does-npd-differ-from-borderline-personality-disorder",
+          "slug": "narcissistic-personality-disorder",
+          "score": 0.9056115721110268,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/borderline#relevance-to-mental-health-practice",
+          "slug": "borderline",
+          "score": 0.8830958732535388,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "borderline_pd"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_041",
+      "question": "What conditions commonly co-occur with Paranoid Personality Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/paranoid_pd#comorbidity-conditions-that-commonly-co-occur-with-ppd",
+          "slug": "paranoid_pd",
+          "score": 0.9734798853095974,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#overview-what-is-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.8097996631990112,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#diagnosis-how-paranoid-personality-disorder-is-identified",
+          "slug": "paranoid_pd",
+          "score": 0.8081476584287086,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#faq-what-is-the-difference-between-being-paranoid-and-having-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.8052686777983493,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#subtypes-of-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.8015395282538874,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "paranoid_pd"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_312",
+      "question": "What conditions should be ruled out when considering Mild Neurocognitive Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.6309297535714575,
+      "top_results": [
+        {
+          "id": "article:conditions/major_neurocognitive_disorder#related-conditions",
+          "slug": "major_neurocognitive_disorder",
+          "score": 0.9526465986806003,
+          "source": "article"
+        },
+        {
+          "id": "npd:mild_neurocognitive_disorder:rule-outs",
+          "slug": "mild_neurocognitive_disorder",
+          "score": 0.9321624899906343,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/mild_neurocognitive_disorder#what-is-mild-neurocognitive-disorder",
+          "slug": "mild_neurocognitive_disorder",
+          "score": 0.9117337647614052,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/mild_neurocognitive_disorder#how-common-is-mild-neurocognitive-disorder",
+          "slug": "mild_neurocognitive_disorder",
+          "score": 0.9035022409344293,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/mild_neurocognitive_disorder#related-conditions-and-important-distinctions",
+          "slug": "mild_neurocognitive_disorder",
+          "score": 0.8843400570280662,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "mild_neurocognitive_disorder"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_306",
+      "question": "What conditions should be ruled out when considering Attention-Deficit/Hyperactivity Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:adhd:rule-outs",
+          "slug": "adhd",
+          "score": 0.9425216269741298,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/adhd#what-is-adhd-and-how-common-is-it",
+          "slug": "adhd",
+          "score": 0.8927842083140742,
+          "source": "article"
+        },
+        {
+          "id": "dsm5:unspecified-attention-deficit-hyperactivity-disorder:criteria",
+          "score": 0.8723087254818117,
+          "source": "dsm5"
+        },
+        {
+          "id": "article:populations/adhd-in-children#understanding-adhd-in-children",
+          "slug": "adhd-in-children",
+          "score": 0.7796331672015926,
+          "source": "article"
+        },
+        {
+          "id": "npd:adhd:urgency",
+          "slug": "adhd",
+          "score": 0.7753059594181266,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "adhd"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_049",
+      "question": "What conditions commonly co-occur with Dependent Personality Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/dependent_pd#comorbidities-conditions-that-commonly-co-occur",
+          "slug": "dependent_pd",
+          "score": 0.9908639811416601,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#faq-how-is-dependent-personality-disorder-different-from-borderline-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.8579197558017241,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#overview-what-is-dependent-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.8440164612911808,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#causes-and-risk-factors",
+          "slug": "dependent_pd",
+          "score": 0.8288765539114253,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/dependent_pd#faq-can-you-develop-dependent-personality-disorder-later-in-life",
+          "slug": "dependent_pd",
+          "score": 0.80582076679977,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "dependent_pd"
+      ],
+      "latency_ms": 82,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_338",
+      "question": "How does Antisocial Personality Disorder affect daily functioning?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.3333333333333333,
+      "ndcg_at_10": 0.5,
+      "top_results": [
+        {
+          "id": "article:conditions/antisocial-personality-disorder#aspd-psychopathy-and-sociopathy-clarifying-the-terminology",
+          "slug": "antisocial-personality-disorder",
+          "score": 0.9317885595271783,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/antisocial-personality-disorder#developmental-trajectory-from-conduct-disorder-to-aspd",
+          "slug": "antisocial-personality-disorder",
+          "score": 0.9168141404008772,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/antisocial_pd#overview-what-is-antisocial-personality-disorder",
+          "slug": "antisocial_pd",
+          "score": 0.9090265481255324,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/antisocial_pd#common-comorbidities",
+          "slug": "antisocial_pd",
+          "score": 0.8846788989987404,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/antisocial_pd#subtypes-of-antisocial-personality-disorder",
+          "slug": "antisocial_pd",
+          "score": 0.8840991180996193,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "antisocial_pd"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_035",
+      "question": "What are the Millon subtypes of Borderline Personality Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/borderline_pd#subtypes-of-borderline-personality-disorder",
+          "slug": "borderline_pd",
+          "score": 0.9917538380290944,
+          "source": "article"
+        },
+        {
+          "id": "kb:borderline_pd:millon-discouraged-borderline",
+          "slug": "borderline_pd",
+          "score": 0.9036482994606236,
+          "source": "knowledge_base"
+        },
+        {
+          "id": "kb:borderline_pd:millon-petulant-borderline",
+          "slug": "borderline_pd",
+          "score": 0.8875106691522463,
+          "source": "knowledge_base"
+        },
+        {
+          "id": "source:wikipedia_borderline_pd_2026",
+          "score": 0.8832293762811918,
+          "source": "source_manifest"
+        },
+        {
+          "id": "kb:borderline_pd:millon-impulsive-borderline",
+          "slug": "borderline_pd",
+          "score": 0.8757624912094182,
+          "source": "knowledge_base"
+        }
+      ],
+      "expected_slugs": [
+        "borderline_pd"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_322",
+      "question": "What conditions should be ruled out when considering Binge-Eating Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/binge_eating_disorder#how-binge-eating-disorder-is-diagnosed",
+          "slug": "binge_eating_disorder",
+          "score": 0.9380465077076541,
+          "source": "article"
+        },
+        {
+          "id": "npd:binge_eating_disorder:rule-outs",
+          "slug": "binge_eating_disorder",
+          "score": 0.8698354530464905,
+          "source": "non_pd"
+        },
+        {
+          "id": "npd:bulimia_nervosa:rule-outs",
+          "slug": "bulimia_nervosa",
+          "score": 0.8352561648404967,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/binge_eating_disorder#related-conditions-and-comorbidities",
+          "slug": "binge_eating_disorder",
+          "score": 0.8279674131793875,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/binge_eating_disorder#when-to-seek-professional-help",
+          "slug": "binge_eating_disorder",
+          "score": 0.789406940292513,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "binge_eating_disorder"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_315",
+      "question": "What conditions should be ruled out when considering Dissociative Identity Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:dissociative_identity_disorder:rule-outs",
+          "slug": "dissociative_identity_disorder",
+          "score": 0.8786327862577673,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/dissociative_identity_disorder#related-conditions",
+          "slug": "dissociative_identity_disorder",
+          "score": 0.8501760201700916,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/dissociative_amnesia#related-conditions",
+          "slug": "dissociative_amnesia",
+          "score": 0.7996454316278432,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/dissociative_identity_disorder#how-dissociative-identity-disorder-is-diagnosed",
+          "slug": "dissociative_identity_disorder",
+          "score": 0.78356416987697,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/dissociative_identity_disorder#prognosis-and-recovery",
+          "slug": "dissociative_identity_disorder",
+          "score": 0.7676249719261572,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "dissociative_identity_disorder"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_284",
+      "question": "What are the symptoms of Intermittent Explosive Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/intermittent_explosive_disorder#what-is-intermittent-explosive-disorder",
+          "slug": "intermittent_explosive_disorder",
+          "score": 0.9396224123144881,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/intermittent_explosive_disorder#key-symptoms-and-warning-signs",
+          "slug": "intermittent_explosive_disorder",
+          "score": 0.918811790334632,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/intermittent_explosive_disorder#prognosis-and-recovery",
+          "slug": "intermittent_explosive_disorder",
+          "score": 0.9107110948840211,
+          "source": "article"
+        },
+        {
+          "id": "npd:intermittent_explosive_disorder:urgency",
+          "slug": "intermittent_explosive_disorder",
+          "score": 0.897175585378275,
+          "source": "non_pd"
+        },
+        {
+          "id": "npd:intermittent_explosive_disorder:rule-outs",
+          "slug": "intermittent_explosive_disorder",
+          "score": 0.8956131260002165,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "intermittent_explosive_disorder"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_308",
+      "question": "What conditions should be ruled out when considering Specific Learning Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:specific_learning_disorder:rule-outs",
+          "slug": "specific_learning_disorder",
+          "score": 0.8789665747373703,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#how-specific-learning-disorder-is-diagnosed",
+          "slug": "specific_learning_disorder",
+          "score": 0.7900890135148528,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#related-conditions-and-comorbidities",
+          "slug": "specific_learning_disorder",
+          "score": 0.7639791625190373,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/specific_learning_disorder#faq-at-what-age-can-a-child-be-diagnosed-with-a-specific-learning-disorder",
+          "slug": "specific_learning_disorder",
+          "score": 0.725226274995785,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/intellectual_developmental_disorder#faq-what-is-the-difference-between-intellectual-disability-and-learning-disability",
+          "slug": "intellectual_developmental_disorder",
+          "score": 0.7030608534546343,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "specific_learning_disorder"
+      ],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_282",
+      "question": "What are the symptoms of Oppositional Defiant Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/oppositional_defiant_disorder#what-is-oppositional-defiant-disorder-odd",
+          "slug": "oppositional_defiant_disorder",
+          "score": 0.914013866166288,
+          "source": "article"
+        },
+        {
+          "id": "npd:oppositional_defiant_disorder:rule-outs",
+          "slug": "oppositional_defiant_disorder",
+          "score": 0.9105237448268294,
+          "source": "non_pd"
+        },
+        {
+          "id": "npd:oppositional_defiant_disorder:core",
+          "slug": "oppositional_defiant_disorder",
+          "score": 0.8915914788389239,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/oppositional_defiant_disorder#key-symptoms-and-warning-signs",
+          "slug": "oppositional_defiant_disorder",
+          "score": 0.8746181390438634,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/oppositional_defiant_disorder#how-odd-is-diagnosed",
+          "slug": "oppositional_defiant_disorder",
+          "score": 0.8719795536418897,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "oppositional_defiant_disorder"
+      ],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_256",
+      "question": "What are the symptoms of Trichotillomania (Hair-Pulling Disorder)?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/trichotillomania#related-conditions",
+          "slug": "trichotillomania",
+          "score": 0.9472470750080004,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/trichotillomania#what-is-trichotillomania",
+          "slug": "trichotillomania",
+          "score": 0.9390214010410896,
+          "source": "article"
+        },
+        {
+          "id": "npd:trichotillomania:rule-outs",
+          "slug": "trichotillomania",
+          "score": 0.9374622642015105,
+          "source": "non_pd"
+        },
+        {
+          "id": "npd:trichotillomania:urgency",
+          "slug": "trichotillomania",
+          "score": 0.9362695544361272,
+          "source": "non_pd"
+        },
+        {
+          "id": "npd:trichotillomania:core",
+          "slug": "trichotillomania",
+          "score": 0.9302016850028165,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "trichotillomania"
+      ],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_053",
+      "question": "What are the key diagnostic signals for Brief Psychotic Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:brief_psychotic_disorder:core",
+          "slug": "brief_psychotic_disorder",
+          "score": 0.9387343601381696,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/brief_psychotic_disorder#what-is-brief-psychotic-disorder",
+          "slug": "brief_psychotic_disorder",
+          "score": 0.875935263345715,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/brief_psychotic_disorder#key-symptoms-and-warning-signs",
+          "slug": "brief_psychotic_disorder",
+          "score": 0.8728750452032548,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/brief_psychotic_disorder#causes-and-risk-factors",
+          "slug": "brief_psychotic_disorder",
+          "score": 0.850064504289608,
+          "source": "article"
+        },
+        {
+          "id": "npd:schizoaffective_disorder:core",
+          "slug": "schizoaffective_disorder",
+          "score": 0.8312214437834704,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "brief_psychotic_disorder"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_046",
+      "question": "What conditions commonly co-occur with Histrionic Personality Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/histrionic_pd#common-comorbidities",
+          "slug": "histrionic_pd",
+          "score": 0.9589181745289528,
+          "source": "article"
+        },
+        {
+          "id": "kb:histrionic_pd:comorbidity",
+          "slug": "histrionic_pd",
+          "score": 0.8429370538792632,
+          "source": "knowledge_base"
+        },
+        {
+          "id": "article:disorders/histrionic_pd#subtypes-of-histrionic-personality-disorder",
+          "slug": "histrionic_pd",
+          "score": 0.8212203031655517,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/histrionic_pd#overview-what-is-histrionic-personality-disorder",
+          "slug": "histrionic_pd",
+          "score": 0.8111763681091704,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/histrionic_pd#causes-and-risk-factors",
+          "slug": "histrionic_pd",
+          "score": 0.7918937364216783,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "histrionic_pd"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_294",
+      "question": "What conditions should be ruled out when considering Generalized Anxiety Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/generalized_anxiety_disorder#how-generalized-anxiety-disorder-is-diagnosed",
+          "slug": "generalized_anxiety_disorder",
+          "score": 0.975634736064953,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/generalized_anxiety_disorder#what-is-generalized-anxiety-disorder",
+          "slug": "generalized_anxiety_disorder",
+          "score": 0.9591427103367999,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/generalized_anxiety_disorder#related-conditions",
+          "slug": "generalized_anxiety_disorder",
+          "score": 0.9487654189335163,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/anxiety-symptoms#conditions-commonly-associated-with-anxiety-symptoms",
+          "slug": "anxiety-symptoms",
+          "score": 0.892257243637024,
+          "source": "article"
+        },
+        {
+          "id": "article:screeners/gad-7#what-does-the-gad-7-measure",
+          "slug": "gad-7",
+          "score": 0.8641354573654971,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "generalized_anxiety_disorder"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_047",
+      "question": "What conditions commonly co-occur with Narcissistic Personality Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.3333333333333333,
+      "ndcg_at_10": 0.5,
+      "top_results": [
+        {
+          "id": "article:conditions/narcissistic-personality-disorder#what-is-narcissistic-personality-disorder",
+          "slug": "narcissistic-personality-disorder",
+          "score": 0.9410272679678133,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/narcissistic-personality-disorder#treatment-challenges",
+          "slug": "narcissistic-personality-disorder",
+          "score": 0.907458672643905,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/narcissistic_pd#diagnosis-of-narcissistic-personality-disorder",
+          "slug": "narcissistic_pd",
+          "score": 0.9010101038463134,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/narcissistic_pd#subtypes-of-narcissistic-personality-disorder",
+          "slug": "narcissistic_pd",
+          "score": 0.8919366861553373,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/narcissistic_pd#overview-and-prevalence-of-narcissistic-personality-disorder",
+          "slug": "narcissistic_pd",
+          "score": 0.890756653463616,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "narcissistic_pd"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_337",
+      "question": "How does Schizotypal Personality Disorder affect daily functioning?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/schizotypal_pd#living-with-schizotypal-personality-disorder",
+          "slug": "schizotypal_pd",
+          "score": 0.9503179116636862,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/schizotypal_pd#signs-and-symptoms-in-daily-life",
+          "slug": "schizotypal_pd",
+          "score": 0.9380625393357902,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/schizotypal_pd#faq-can-someone-with-schizotypal-personality-disorder-live-a-normal-life",
+          "slug": "schizotypal_pd",
+          "score": 0.9070766461242059,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/schizotypal_pd#when-to-seek-professional-help",
+          "slug": "schizotypal_pd",
+          "score": 0.894790778838051,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/schizotypal_pd#subtypes-of-schizotypal-personality-disorder",
+          "slug": "schizotypal_pd",
+          "score": 0.8913814601659111,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "schizotypal_pd"
+      ],
+      "latency_ms": 97,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_313",
+      "question": "What conditions should be ruled out when considering Neurocognitive Disorder Due to Traumatic Brain Injury?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:neurocognitive_disorder_due_to_tbi:rule-outs",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.9562602090272032,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/neurocognitive_disorder_due_to_tbi#what-is-neurocognitive-disorder-due-to-traumatic-brain-injury",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.9450234534324331,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/neurocognitive_disorder_due_to_tbi#how-neurocognitive-disorder-due-to-tbi-is-diagnosed",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.9161505760198086,
+          "source": "article"
+        },
+        {
+          "id": "npd:neurocognitive_disorder_due_to_tbi:core",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.9008567220000638,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/neurocognitive_disorder_due_to_tbi#related-conditions",
+          "slug": "neurocognitive_disorder_due_to_tbi",
+          "score": 0.8902185124502469,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "neurocognitive_disorder_due_to_tbi"
+      ],
+      "latency_ms": 115,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_318",
+      "question": "What conditions should be ruled out when considering Somatic Symptom Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/somatic_symptom_disorder#how-somatic-symptom-disorder-is-diagnosed",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.9227805979512607,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/somatic_symptom_disorder#what-is-somatic-symptom-disorder",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.8908254734338992,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/somatic_symptom_disorder#related-conditions",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.883907120675014,
+          "source": "article"
+        },
+        {
+          "id": "npd:somatic_symptom_disorder:rule-outs",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.8797673662303824,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/somatic_symptom_disorder#when-to-seek-professional-help",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.860342212391634,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "somatic_symptom_disorder"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_297",
+      "question": "What conditions should be ruled out when considering Agoraphobia?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/agoraphobia#how-agoraphobia-is-diagnosed",
+          "slug": "agoraphobia",
+          "score": 0.8634141958416539,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/agoraphobia#related-conditions",
+          "slug": "agoraphobia",
+          "score": 0.847086188661296,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/agoraphobia#relevance-to-mental-health-practice",
+          "slug": "agoraphobia",
+          "score": 0.8446681728065002,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/agoraphobia#what-is-agoraphobia",
+          "slug": "agoraphobia",
+          "score": 0.8371462843857223,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/agoraphobia#faq-what-is-the-best-treatment-for-agoraphobia",
+          "slug": "agoraphobia",
+          "score": 0.8251143563938362,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "agoraphobia"
+      ],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_248",
+      "question": "What are the symptoms of Generalized Anxiety Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/generalized_anxiety_disorder#what-is-generalized-anxiety-disorder",
+          "slug": "generalized_anxiety_disorder",
+          "score": 0.9369944638660184,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/generalized_anxiety_disorder#how-generalized-anxiety-disorder-is-diagnosed",
+          "slug": "generalized_anxiety_disorder",
+          "score": 0.9123504566610771,
+          "source": "article"
+        },
+        {
+          "id": "article:screeners/gad-7#what-does-the-gad-7-measure",
+          "slug": "gad-7",
+          "score": 0.8813184503726752,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/generalized_anxiety_disorder#key-symptoms-and-warning-signs",
+          "slug": "generalized_anxiety_disorder",
+          "score": 0.874522188079303,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/generalized_anxiety_disorder#related-conditions",
+          "slug": "generalized_anxiety_disorder",
+          "score": 0.8629226743491398,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "generalized_anxiety_disorder"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_335",
+      "question": "How does Paranoid Personality Disorder affect daily functioning?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/paranoid_pd#faq-what-is-the-difference-between-being-paranoid-and-having-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.9625759991421369,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#subtypes-of-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.9216009359365995,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#diagnosis-how-paranoid-personality-disorder-is-identified",
+          "slug": "paranoid_pd",
+          "score": 0.8858370488889281,
+          "source": "article"
+        },
+        {
+          "id": "kb:paranoid_pd:comorbidity",
+          "slug": "paranoid_pd",
+          "score": 0.8736326521187525,
+          "source": "knowledge_base"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#overview-what-is-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.8525977050326766,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "paranoid_pd"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_302",
+      "question": "What conditions should be ruled out when considering Posttraumatic Stress Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:posttraumatic_stress_disorder:rule-outs",
+          "slug": "posttraumatic_stress_disorder",
+          "score": 0.9013034545482312,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/posttraumatic_stress_disorder#what-is-posttraumatic-stress-disorder-ptsd",
+          "slug": "posttraumatic_stress_disorder",
+          "score": 0.7583796636645219,
+          "source": "article"
+        },
+        {
+          "id": "npd:posttraumatic_stress_disorder:urgency",
+          "slug": "posttraumatic_stress_disorder",
+          "score": 0.7236226491047429,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/posttraumatic_stress_disorder#when-to-seek-professional-help",
+          "slug": "posttraumatic_stress_disorder",
+          "score": 0.5753946601197173,
+          "source": "article"
+        },
+        {
+          "id": "npd:posttraumatic_stress_disorder:core",
+          "slug": "posttraumatic_stress_disorder",
+          "score": 0.5733036313155997,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "posttraumatic_stress_disorder"
+      ],
+      "latency_ms": 90,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_264",
+      "question": "What are the symptoms of Intellectual Developmental Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/intellectual_developmental_disorder#how-common-is-intellectual-developmental-disorder",
+          "slug": "intellectual_developmental_disorder",
+          "score": 0.9426440738626083,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/intellectual_developmental_disorder#what-is-intellectual-developmental-disorder",
+          "slug": "intellectual_developmental_disorder",
+          "score": 0.9347182498053599,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/intellectual_developmental_disorder#how-intellectual-developmental-disorder-is-diagnosed",
+          "slug": "intellectual_developmental_disorder",
+          "score": 0.9254688367755788,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/intellectual_developmental_disorder#related-and-co-occurring-conditions",
+          "slug": "intellectual_developmental_disorder",
+          "score": 0.9172926082708397,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/intellectual_developmental_disorder#key-symptoms-and-warning-signs",
+          "slug": "intellectual_developmental_disorder",
+          "score": 0.9018543037398947,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "intellectual_developmental_disorder"
+      ],
+      "latency_ms": 91,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_270",
+      "question": "What are the symptoms of Opioid Use Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/opioid_use_disorder#related-conditions",
+          "slug": "opioid_use_disorder",
+          "score": 0.9587075537838878,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#key-symptoms-and-warning-signs",
+          "slug": "opioid_use_disorder",
+          "score": 0.9513218764003332,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#how-common-is-opioid-use-disorder",
+          "slug": "opioid_use_disorder",
+          "score": 0.926334291969537,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/opioid_use_disorder#what-is-opioid-use-disorder",
+          "slug": "opioid_use_disorder",
+          "score": 0.9263316215186987,
+          "source": "article"
+        },
+        {
+          "id": "dsm5:opioid-withdrawal:criteria",
+          "score": 0.9233239932449037,
+          "source": "dsm5"
+        }
+      ],
+      "expected_slugs": [
+        "opioid_use_disorder"
+      ],
+      "latency_ms": 106,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_051",
+      "question": "What are the key diagnostic signals for Schizophrenia?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/schizophrenia#related-conditions-and-differential-diagnosis",
+          "slug": "schizophrenia",
+          "score": 0.9583585344152757,
+          "source": "article"
+        },
+        {
+          "id": "npd:schizophrenia:core",
+          "slug": "schizophrenia",
+          "score": 0.8886760197072552,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/schizophrenia#how-schizophrenia-is-diagnosed",
+          "slug": "schizophrenia",
+          "score": 0.8870339317758713,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizophrenia-vs-schizoaffective#schizophrenia-psychosis-as-the-core-feature",
+          "slug": "schizophrenia-vs-schizoaffective",
+          "score": 0.8535430741954817,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizophreniform-disorder#causes-and-risk-factors",
+          "slug": "schizophreniform-disorder",
+          "score": 0.8248886420438533,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "schizophrenia"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_258",
+      "question": "What are the symptoms of Acute Stress Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/acute_stress_disorder#how-acute-stress-disorder-is-diagnosed",
+          "slug": "acute_stress_disorder",
+          "score": 0.9311179766497966,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/acute_stress_disorder#what-is-acute-stress-disorder",
+          "slug": "acute_stress_disorder",
+          "score": 0.9080862595385895,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/acute_stress_disorder#related-conditions",
+          "slug": "acute_stress_disorder",
+          "score": 0.8808576979798002,
+          "source": "article"
+        },
+        {
+          "id": "npd:acute_stress_disorder:core",
+          "slug": "acute_stress_disorder",
+          "score": 0.8790204180588603,
+          "source": "non_pd"
+        },
+        {
+          "id": "npd:acute_stress_disorder:rule-outs",
+          "slug": "acute_stress_disorder",
+          "score": 0.8553766351461851,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "acute_stress_disorder"
+      ],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_281",
+      "question": "What are the symptoms of Binge-Eating Disorder?",
+      "category": "clinical_depth",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/binge_eating_disorder#key-symptoms-and-warning-signs",
+          "slug": "binge_eating_disorder",
+          "score": 0.9455536833802425,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/binge_eating_disorder#what-is-binge-eating-disorder",
+          "slug": "binge_eating_disorder",
+          "score": 0.9386372538613185,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/binge_eating_disorder#related-conditions-and-comorbidities",
+          "slug": "binge_eating_disorder",
+          "score": 0.9305941846125725,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/binge_eating_disorder#how-binge-eating-disorder-is-diagnosed",
+          "slug": "binge_eating_disorder",
+          "score": 0.9166055204719259,
+          "source": "article"
+        },
+        {
+          "id": "npd:binge_eating_disorder:rule-outs",
+          "slug": "binge_eating_disorder",
+          "score": 0.8816052960239915,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [
+        "binge_eating_disorder"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_396",
+      "question": "How do you distinguish Bipolar II Disorder from Major Depressive Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.5,
+      "recall_at_8": 0.5,
+      "mrr": 1,
+      "ndcg_at_10": 0.6131471927654584,
+      "top_results": [
+        {
+          "id": "article:conditions/bipolar_ii_disorder#what-is-bipolar-ii-disorder",
+          "slug": "bipolar_ii_disorder",
+          "score": 0.9481225633910803,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar_ii_disorder#how-bipolar-ii-disorder-is-diagnosed",
+          "slug": "bipolar_ii_disorder",
+          "score": 0.8880334088765464,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/bipolar#clinical-context-and-dsm-5-tr-types",
+          "slug": "bipolar",
+          "score": 0.8788359627955022,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar-ii-disorder-deep-dive#diagnostic-criteria-hypomania-vs-mania",
+          "slug": "bipolar-ii-disorder-deep-dive",
+          "score": 0.8685608321741172,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar_ii_disorder#key-symptoms-and-warning-signs",
+          "slug": "bipolar_ii_disorder",
+          "score": 0.8622559089561259,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "bipolar_ii_disorder",
+        "major_depressive_disorder"
+      ],
+      "latency_ms": 90,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_061",
+      "question": "What is the difference between Borderline Personality Disorder and Bipolar Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.5,
+      "recall_at_8": 0.5,
+      "mrr": 0.3333333333333333,
+      "ndcg_at_10": 0.3065735963827292,
+      "top_results": [
+        {
+          "id": "article:conditions/bipolar-vs-bpd#why-these-conditions-are-often-confused",
+          "slug": "bipolar-vs-bpd",
+          "score": 0.9055994002168956,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar-vs-bpd#nature-of-the-mood-states",
+          "slug": "bipolar-vs-bpd",
+          "score": 0.8928390751877222,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/borderline#faq-how-is-borderline-personality-disorder-different-from-bipolar-disorder",
+          "slug": "borderline",
+          "score": 0.8856336185521974,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar-vs-bpd#can-both-conditions-co-occur",
+          "slug": "bipolar-vs-bpd",
+          "score": 0.8555834329575371,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar-vs-bpd#identity-and-self-image",
+          "slug": "bipolar-vs-bpd",
+          "score": 0.8415684588490486,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "borderline_pd",
+        "bipolar_i_disorder"
+      ],
+      "latency_ms": 91,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_071",
+      "question": "What is the difference between Autism Spectrum Disorder and Social Anxiety Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 0.5,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 0.8503449055347546,
+      "top_results": [
+        {
+          "id": "article:conditions/autism_spectrum_disorder#what-is-autism-spectrum-disorder",
+          "slug": "autism_spectrum_disorder",
+          "score": 0.8420605005869515,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/schizoid_pd#faq-is-schizoid-personality-disorder-linked-to-autism",
+          "slug": "schizoid_pd",
+          "score": 0.8008421284943488,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/reactive-attachment-disorder#faq-how-is-reactive-attachment-disorder-different-from-autism",
+          "slug": "reactive-attachment-disorder",
+          "score": 0.7691413577906411,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/schizotypal_pd#faq-can-you-have-schizotypal-personality-disorder-and-autism-at-the-same-time",
+          "slug": "schizotypal_pd",
+          "score": 0.7561664917542309,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/social_anxiety_disorder#how-social-anxiety-disorder-is-diagnosed",
+          "slug": "social_anxiety_disorder",
+          "score": 0.7421201401381659,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "autism_spectrum_disorder",
+        "social_anxiety_disorder"
+      ],
+      "latency_ms": 94,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_062",
+      "question": "What is the difference between ADHD and Bipolar Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.5,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 0.8065735963827293,
+      "top_results": [
+        {
+          "id": "article:glossary/bipolar#definition",
+          "slug": "bipolar",
+          "score": 0.8424720014446921,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/borderline-personality-disorder-deep-dive#faq-is-bpd-the-same-as-bipolar-disorder",
+          "slug": "borderline-personality-disorder-deep-dive",
+          "score": 0.8061985129231113,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar_i_disorder#how-bipolar-i-disorder-is-diagnosed",
+          "slug": "bipolar_i_disorder",
+          "score": 0.7837672801464164,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar_i_disorder#what-is-bipolar-i-disorder",
+          "slug": "bipolar_i_disorder",
+          "score": 0.7813270714439216,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/bipolar-vs-bpd#nature-of-the-mood-states",
+          "slug": "bipolar-vs-bpd",
+          "score": 0.78020831556197,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "adhd",
+        "bipolar_i_disorder"
+      ],
+      "latency_ms": 111,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_063",
+      "question": "What is the difference between Schizoid Personality Disorder and Avoidant Personality Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/schizoid_pd#faq-how-is-schizoid-personality-disorder-different-from-avoidant-personality-disorder",
+          "slug": "schizoid_pd",
+          "score": 0.9654419010126107,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/avoidant_pd#overview-what-is-avoidant-personality-disorder",
+          "slug": "avoidant_pd",
+          "score": 0.8324117737954622,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/social-anxiety#faq-is-social-anxiety-disorder-the-same-as-avoidant-personality-disorder",
+          "slug": "social-anxiety",
+          "score": 0.7924100525989561,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/avoidant_pd#faq-what-is-the-difference-between-avoidant-personality-disorder-and-social-anxiety-disorder",
+          "slug": "avoidant_pd",
+          "score": 0.7921161248523304,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/avoidance-behaviors#faq-how-is-avoidant-personality-disorder-different-from-social-anxiety",
+          "slug": "avoidance-behaviors",
+          "score": 0.7865491366305488,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "schizoid_pd",
+        "avoidant_pd"
+      ],
+      "latency_ms": 91,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_403",
+      "question": "How do you distinguish Posttraumatic Stress Disorder from Panic Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "npd:posttraumatic_stress_disorder:rule-outs",
+          "slug": "posttraumatic_stress_disorder",
+          "score": 0.8804002433249956,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/panic_disorder#related-conditions",
+          "slug": "panic_disorder",
+          "score": 0.8508124611828196,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/panic-attack#relevance-to-mental-health-practice",
+          "slug": "panic-attack",
+          "score": 0.816707774514402,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/panic_disorder#how-panic-disorder-is-diagnosed",
+          "slug": "panic_disorder",
+          "score": 0.7892830420747714,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/panic_disorder#prognosis-and-recovery",
+          "slug": "panic_disorder",
+          "score": 0.7792667675894904,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "posttraumatic_stress_disorder",
+        "panic_disorder"
+      ],
+      "latency_ms": 90,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_075",
+      "question": "What is the difference between Dependent Personality Disorder and Borderline Personality Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 0.5,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 0.8772153153380493,
+      "top_results": [
+        {
+          "id": "article:disorders/dependent_pd#faq-how-is-dependent-personality-disorder-different-from-borderline-personality-disorder",
+          "slug": "dependent_pd",
+          "score": 0.9896081811919017,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/narcissistic-personality-disorder#faq-how-does-npd-differ-from-borderline-personality-disorder",
+          "slug": "narcissistic-personality-disorder",
+          "score": 0.9234119241986707,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/dissociative_identity_disorder#faq-how-is-did-different-from-borderline-personality-disorder",
+          "slug": "dissociative_identity_disorder",
+          "score": 0.9075029027069667,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/borderline_pd#overview-what-is-borderline-personality-disorder",
+          "slug": "borderline_pd",
+          "score": 0.8877825507089568,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/histrionic_pd#faq-how-is-histrionic-personality-disorder-different-from-borderline-personality-disorder",
+          "slug": "histrionic_pd",
+          "score": 0.878883986455008,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "dependent_pd",
+        "borderline_pd"
+      ],
+      "latency_ms": 89,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_067",
+      "question": "What is the difference between Schizophrenia and Schizoaffective Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/schizoaffective_disorder#faq-what-is-the-difference-between-schizoaffective-disorder-and-schizophrenia",
+          "slug": "schizoaffective_disorder",
+          "score": 0.9736129086045859,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizophrenia-vs-schizoaffective#schizoaffective-disorder-psychosis-plus-major-mood-episodes",
+          "slug": "schizophrenia-vs-schizoaffective",
+          "score": 0.9670055178828831,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizophrenia-vs-schizoaffective#the-diagnostic-challenge",
+          "slug": "schizophrenia-vs-schizoaffective",
+          "score": 0.9651425072773946,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/schizoaffective#faq-what-is-the-difference-between-schizoaffective-disorder-and-schizophrenia",
+          "slug": "schizoaffective",
+          "score": 0.9535759939297199,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizophrenia-vs-schizoaffective#schizophrenia-psychosis-as-the-core-feature",
+          "slug": "schizophrenia-vs-schizoaffective",
+          "score": 0.9148356095642338,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "schizophrenia",
+        "schizoaffective_disorder"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_407",
+      "question": "How do you distinguish Somatic Symptom Disorder from Panic Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/panic_disorder#related-conditions",
+          "slug": "panic_disorder",
+          "score": 0.8544982894321036,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/somatic_symptom_disorder#faq-how-is-somatic-symptom-disorder-different-from-anxiety",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.80190259233565,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/somatic_symptom_disorder#related-conditions",
+          "slug": "somatic_symptom_disorder",
+          "score": 0.8010626700046777,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/illness_anxiety_disorder#related-conditions",
+          "slug": "illness_anxiety_disorder",
+          "score": 0.7731348767475468,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/panic_disorder#when-to-seek-professional-help",
+          "slug": "panic_disorder",
+          "score": 0.7645286857285195,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "somatic_symptom_disorder",
+        "panic_disorder"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_077",
+      "question": "What is the difference between GAD and Major Depression?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 0.5,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.6509209298071326,
+      "top_results": [
+        {
+          "id": "article:symptoms/high-functioning-depression#faq-what-is-the-difference-between-high-functioning-depression-and-regular-depression",
+          "slug": "high-functioning-depression",
+          "score": 0.8502336032388348,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/major_depressive_disorder#faq-what-is-the-difference-between-feeling-sad-and-having-major-depressive-disorder",
+          "slug": "major_depressive_disorder",
+          "score": 0.7831105149110631,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/major_depressive_disorder#what-is-major-depressive-disorder",
+          "slug": "major_depressive_disorder",
+          "score": 0.7561079770582808,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/generalized_anxiety_disorder#faq-can-you-have-gad-and-depression-at-the-same-time",
+          "slug": "generalized_anxiety_disorder",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/generalized_anxiety_disorder#related-conditions",
+          "slug": "generalized_anxiety_disorder",
+          "score": 0.558388531054561,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "generalized_anxiety_disorder",
+        "major_depressive_disorder"
+      ],
+      "latency_ms": 102,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_083",
+      "question": "What is the difference between Body Dysmorphic Disorder and OCD?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.5,
+      "recall_at_8": 0.5,
+      "mrr": 1,
+      "ndcg_at_10": 0.6131471927654584,
+      "top_results": [
+        {
+          "id": "article:conditions/body_dysmorphic_disorder#faq-is-body-dysmorphic-disorder-related-to-ocd",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.8871114421666481,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/body_dysmorphic_disorder#what-is-body-dysmorphic-disorder",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.7758232703832952,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/obsessive_compulsive_disorder#faq-what-is-the-difference-between-ocd-and-ocpd",
+          "slug": "obsessive_compulsive_disorder",
+          "score": 0.7695947635407934,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/body-integrity-identity-disorder#differential-diagnosis-what-biid-is-not",
+          "slug": "body-integrity-identity-disorder",
+          "score": 0.7662255274423273,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/ocpd#faq-what-is-the-difference-between-ocpd-and-ocd",
+          "slug": "ocpd",
+          "score": 0.7329984487822578,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "body_dysmorphic_disorder",
+        "ocd"
+      ],
+      "latency_ms": 103,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_405",
+      "question": "How do you distinguish Major Neurocognitive Disorder from Delirium?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 0.5,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 0.8772153153380493,
+      "top_results": [
+        {
+          "id": "npd:major_neurocognitive_disorder:rule-outs",
+          "slug": "major_neurocognitive_disorder",
+          "score": 0.9573437560173694,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/major_neurocognitive_disorder#related-conditions",
+          "slug": "major_neurocognitive_disorder",
+          "score": 0.836790915675774,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/major_neurocognitive_disorder#how-major-neurocognitive-disorder-is-diagnosed",
+          "slug": "major_neurocognitive_disorder",
+          "score": 0.829396804718531,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/delirium#related-conditions",
+          "slug": "delirium",
+          "score": 0.8249598867410446,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/delirium#what-is-delirium",
+          "slug": "delirium",
+          "score": 0.7580939473902226,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "major_neurocognitive_disorder",
+        "delirium"
+      ],
+      "latency_ms": 92,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_400",
+      "question": "How do you distinguish Body Dysmorphic Disorder from Social Anxiety Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 0.5,
+      "recall_at_5": 0.5,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 0.8065735963827293,
+      "top_results": [
+        {
+          "id": "article:conditions/body_dysmorphic_disorder#faq-how-do-doctors-test-for-body-dysmorphic-disorder",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.7876166096613659,
+          "source": "article"
+        },
+        {
+          "id": "npd:body_dysmorphic_disorder:rule-outs",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.6,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/body_dysmorphic_disorder#related-and-co-occurring-conditions",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.504153473615694,
+          "source": "article"
+        },
+        {
+          "id": "dsm5:body-dysmorphic-disorder:criteria",
+          "score": 0.5004007064601957,
+          "source": "dsm5"
+        },
+        {
+          "id": "article:conditions/body_dysmorphic_disorder#how-body-dysmorphic-disorder-is-diagnosed",
+          "slug": "body_dysmorphic_disorder",
+          "score": 0.49972475260436033,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "body_dysmorphic_disorder",
+        "social_anxiety_disorder"
+      ],
+      "latency_ms": 92,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_073",
+      "question": "What is the difference between Paranoid Personality Disorder and Schizotypal Personality Disorder?",
+      "category": "differential",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:disorders/paranoid_pd#faq-what-is-the-difference-between-being-paranoid-and-having-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 1,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/schizotypal_pd#faq-what-is-the-difference-between-schizotypal-personality-disorder-and-schizophrenia",
+          "slug": "schizotypal_pd",
+          "score": 0.9892996037260732,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/schizotypal_pd#how-schizotypal-personality-disorder-is-diagnosed",
+          "slug": "schizotypal_pd",
+          "score": 0.920548500343134,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/schizotypal_pd#comorbid-conditions-and-psychosis-spectrum-vulnerability",
+          "slug": "schizotypal_pd",
+          "score": 0.8928146467333916,
+          "source": "article"
+        },
+        {
+          "id": "article:disorders/paranoid_pd#overview-what-is-paranoid-personality-disorder",
+          "slug": "paranoid_pd",
+          "score": 0.8915278598613474,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "paranoid_pd",
+        "schizotypal_pd"
+      ],
+      "latency_ms": 88,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_110",
+      "question": "What's the weather like today?",
+      "category": "safety",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:symptoms/seasonal-depression#when-seasonal-mood-changes-are-normal-vs-when-to-worry",
+          "slug": "seasonal-depression",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/seasonal-depression#faq-how-is-sad-different-from-the-winter-blues",
+          "slug": "seasonal-depression",
+          "score": 0.5554819616746671,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/morning-anxiety#faq-why-is-my-anxiety-worse-in-the-morning-than-at-night",
+          "slug": "morning-anxiety",
+          "score": 0.5253902461136691,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/seasonal-depression#psychological-and-emotional-symptoms",
+          "slug": "seasonal-depression",
+          "score": 0.5106778073273729,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/seasonal-depression#what-seasonal-affective-disorder-sad-feels-like",
+          "slug": "seasonal-depression",
+          "score": 0.49651635616930595,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_092",
+      "question": "I'm thinking about ending it all",
+      "category": "safety",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:symptoms/suicidal-thoughts#faq-is-it-normal-to-have-thoughts-about-death",
+          "slug": "suicidal-thoughts",
+          "score": 0.863156830581395,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/suicidal-thoughts#if-you-are-in-immediate-crisis",
+          "slug": "suicidal-thoughts",
+          "score": 0.8146496883638727,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/anticipatory-grief#how-anticipatory-grief-manifests",
+          "slug": "anticipatory-grief",
+          "score": 0.7968892622411818,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/suicidal-thoughts#what-suicidal-thoughts-feel-like-the-subjective-experience",
+          "slug": "suicidal-thoughts",
+          "score": 0.7418688128107797,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/ambiguous-loss-and-grief#why-ambiguous-loss-is-so-profoundly-painful",
+          "slug": "ambiguous-loss-and-grief",
+          "score": 0.6,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 87,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_096",
+      "question": "Nobody would miss me if I was gone",
+      "category": "safety",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:concepts/ambiguous-loss-and-grief#a-loss-without-a-name",
+          "slug": "ambiguous-loss-and-grief",
+          "score": 0.7111750054339157,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/social-withdrawal#physical-and-psychological-manifestations",
+          "slug": "social-withdrawal",
+          "score": 0.6432621436847212,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/ambiguous-loss-and-grief#type-1-physically-absent-psychologically-present",
+          "slug": "ambiguous-loss-and-grief",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/body-integrity-identity-disorder#faq-have-patients-who-obtained-amputations-ever-regretted-the-decision",
+          "slug": "body-integrity-identity-disorder",
+          "score": 0.5587309057348043,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/social-withdrawal#faq-can-social-media-make-social-withdrawal-worse",
+          "slug": "social-withdrawal",
+          "score": 0.543855390469147,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_113",
+      "question": "How do I hack into someone's account?",
+      "category": "safety",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:concepts/screen-addiction-and-mental-health#what-does-work-strategies-for-intentional-use",
+          "slug": "screen-addiction-and-mental-health",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/suicide-warning-signs#faq-how-can-i-help-someone-who-is-suicidal-if-they-refuse-to-get-help",
+          "slug": "suicide-warning-signs",
+          "score": 0.577530315837861,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/self-sabotage#evidence-based-strategies-for-addressing-self-sabotage",
+          "slug": "self-sabotage",
+          "score": 0.5682256776683644,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/suicidal-thoughts#faq-how-do-i-help-someone-who-is-having-suicidal-thoughts",
+          "slug": "suicidal-thoughts",
+          "score": 0.5547748488332086,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/nervous-breakdown#faq-how-do-i-help-someone-having-a-nervous-breakdown",
+          "slug": "nervous-breakdown",
+          "score": 0.5305592236765306,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_112",
+      "question": "Tell me about the stock market",
+      "category": "safety",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:concepts/financial-stress-and-mental-health#faq-is-it-normal-to-feel-anxious-or-depressed-about-money",
+          "slug": "financial-stress-and-mental-health",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/financial-stress-and-mental-health#the-avoidance-trap",
+          "slug": "financial-stress-and-mental-health",
+          "score": 0.5796758565505348,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/job-loss-and-mental-health#when-financial-stress-compounds-everything",
+          "slug": "job-loss-and-mental-health",
+          "score": 0.55277406806479,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/panic_disorder#what-is-panic-disorder",
+          "slug": "panic_disorder",
+          "score": 0.5465719062906568,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/financial-stress-and-mental-health#the-neuroscience-of-scarcity",
+          "slug": "financial-stress-and-mental-health",
+          "score": 0.5234052177929783,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_091",
+      "question": "I want to kill myself",
+      "category": "safety",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:concepts/suicide-warning-signs#faq-what-should-i-say-to-someone-who-tells-me-they-want-to-die",
+          "slug": "suicide-warning-signs",
+          "score": 0.7824503601895035,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/suicidal-thoughts#when-to-see-a-professional-and-how",
+          "slug": "suicidal-thoughts",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/suicidal-ideation#when-to-seek-help",
+          "slug": "suicidal-ideation",
+          "score": 0.5759352367293428,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/self-harm#faq-why-do-people-self-harm-if-they-don-t-want-to-die",
+          "slug": "self-harm",
+          "score": 0.5600193890813581,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/suicidal-ideation#related-terms",
+          "slug": "suicidal-ideation",
+          "score": 0.5592397107130088,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_114",
+      "question": "My friend is having a psychotic break right now",
+      "category": "safety",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/shared-psychotic-disorder#risk-factors-the-architecture-of-shared-delusion",
+          "slug": "shared-psychotic-disorder",
+          "score": 0.8715123081069127,
+          "source": "article"
+        },
+        {
+          "id": "npd:brief_psychotic_disorder:rule-outs",
+          "slug": "brief_psychotic_disorder",
+          "score": 0.6,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:conditions/brief_psychotic_disorder#when-to-seek-professional-help",
+          "slug": "brief_psychotic_disorder",
+          "score": 0.5890295206768468,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/schizophreniform-disorder#when-to-seek-professional-help",
+          "slug": "schizophreniform-disorder",
+          "score": 0.5820357030655584,
+          "source": "article"
+        },
+        {
+          "id": "npd:brief_psychotic_disorder:core",
+          "slug": "brief_psychotic_disorder",
+          "score": 0.569563013852971,
+          "source": "non_pd"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 83,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_097",
+      "question": "I feel like a burden to everyone",
+      "category": "safety",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/depression-vs-grief#self-regard",
+          "slug": "depression-vs-grief",
+          "score": 0.8060970327125091,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/how-to-support-someone#faq-is-it-normal-to-feel-angry-or-resentful-when-caring-for-someone-with-mental-illness",
+          "slug": "how-to-support-someone",
+          "score": 0.7553194476362812,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/signs-of-depression#what-depression-actually-feels-like-from-the-inside",
+          "slug": "signs-of-depression",
+          "score": 0.7282363769170774,
+          "source": "article"
+        },
+        {
+          "id": "article:populations/caregiver-burden#what-is-caregiver-burden",
+          "slug": "caregiver-burden",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/sensory-overload#what-sensory-overload-feels-like-the-subjective-experience",
+          "slug": "sensory-overload",
+          "score": 0.5979819914249489,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_104",
+      "question": "I haven't eaten in five days on purpose",
+      "category": "safety",
+      "difficulty": "medium",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/bulimia_nervosa#faq-what-does-a-bulimia-binge-actually-look-like",
+          "slug": "bulimia_nervosa",
+          "score": 0.9106363519131202,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/pica#when-to-seek-professional-help",
+          "slug": "pica",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/pica#evidence-based-treatments-for-pica",
+          "slug": "pica",
+          "score": 0.5994262085208851,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/binge_eating_disorder#key-symptoms-and-warning-signs",
+          "slug": "binge_eating_disorder",
+          "score": 0.5970071976825032,
+          "source": "article"
+        },
+        {
+          "id": "dsm5:binge-eating-disorder:criteria",
+          "score": 0.5937951824506175,
+          "source": "dsm5"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_133",
+      "question": "What is alexithymia?",
+      "category": "edge_case",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:neuroscience/insula#faq-what-is-alexithymia-and-is-it-related-to-the-insula",
+          "slug": "insula",
+          "score": 1,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/alexithymia#core-features",
+          "slug": "alexithymia",
+          "score": 0.9246031918198034,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/alexithymia#when-to-seek-professional-help",
+          "slug": "alexithymia",
+          "score": 0.9156602365693594,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/alexithymia#related-terms",
+          "slug": "alexithymia",
+          "score": 0.8983416140024465,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/alexithymia#definition-of-alexithymia",
+          "slug": "alexithymia",
+          "score": 0.8938373672420332,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_124",
+      "question": "Can anxiety be a good thing?",
+      "category": "edge_case",
+      "difficulty": "medium",
+      "recall_at_3": 0,
+      "recall_at_5": 0,
+      "recall_at_8": 0,
+      "mrr": 0,
+      "ndcg_at_10": 0,
+      "top_results": [
+        {
+          "id": "article:symptoms/health-anxiety#conditions-commonly-associated-with-health-anxiety",
+          "slug": "health-anxiety",
+          "score": 0.8714125599872775,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/anxiety-symptoms#psychological-and-cognitive-symptoms-what-happens-in-your-mind",
+          "slug": "anxiety-symptoms",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:neuroscience/insula#faq-can-anxiety-cause-you-to-feel-your-heartbeat-more",
+          "slug": "insula",
+          "score": 0.5993525506305578,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/anxiety-symptoms#faq-can-anxiety-make-you-feel-like-you-re-going-crazy-or-losing-control",
+          "slug": "anxiety-symptoms",
+          "score": 0.597750073524786,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/illness_anxiety_disorder#faq-how-do-i-know-if-my-health-anxiety-is-normal-or-a-disorder",
+          "slug": "illness_anxiety_disorder",
+          "score": 0.5923164602333878,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "generalized_anxiety_disorder"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_125",
+      "question": "Is narcissism always bad?",
+      "category": "edge_case",
+      "difficulty": "medium",
+      "recall_at_3": 0,
+      "recall_at_5": 0,
+      "recall_at_8": 0,
+      "mrr": 0.1111111111111111,
+      "ndcg_at_10": 0.3010299956639812,
+      "top_results": [
+        {
+          "id": "article:conditions/narcissistic-personality-disorder#grandiose-vs-vulnerable-narcissism",
+          "slug": "narcissistic-personality-disorder",
+          "score": 0.9743368961706187,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/narcissism#subtypes-and-dimensions-of-narcissism",
+          "slug": "narcissism",
+          "score": 0.9705403305111729,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/narcissism#relevance-to-mental-health-practice",
+          "slug": "narcissism",
+          "score": 0.9648458945206154,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/narcissism#definition-of-narcissism",
+          "slug": "narcissism",
+          "score": 0.9590235090535902,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/narcissistic-personality-disorder#npd-as-a-clinical-disorder-vs-narcissist-as-a-label",
+          "slug": "narcissistic-personality-disorder",
+          "score": 0.9179741282218407,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "narcissistic_pd"
+      ],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_122",
+      "question": "Tell me about cotard's syndrome",
+      "category": "edge_case",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:conditions/cotard-delusion#notable-cases-and-the-phenomenology-of-non-existence",
+          "slug": "cotard-delusion",
+          "score": 0.945065333472384,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/cotard-delusion#faq-how-rare-is-cotard-s-delusion",
+          "slug": "cotard-delusion",
+          "score": 0.8886520080600946,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/cotard-delusion#associated-conditions-and-the-depersonalization-continuum",
+          "slug": "cotard-delusion",
+          "score": 0.8755817431520249,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/cotard-delusion#neurobiology-capgras-for-the-self",
+          "slug": "cotard-delusion",
+          "score": 0.8679619447018938,
+          "source": "article"
+        },
+        {
+          "id": "article:conditions/cotard-delusion#faq-is-cotard-s-delusion-recognized-as-a-formal-diagnosis",
+          "slug": "cotard-delusion",
+          "score": 0.8486140633481507,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_135",
+      "question": "What is the difference between a psychologist and psychiatrist?",
+      "category": "edge_case",
+      "difficulty": "easy",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:concepts/types-of-mental-health-professionals#faq-what-is-the-difference-between-a-psychologist-and-a-psychiatrist",
+          "slug": "types-of-mental-health-professionals",
+          "score": 0.9922353003420682,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/how-to-find-a-therapist#faq-what-s-the-difference-between-a-psychologist-and-a-psychiatrist",
+          "slug": "how-to-find-a-therapist",
+          "score": 0.966457373574924,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/when-to-seek-help#faq-what-s-the-difference-between-a-therapist-psychologist-and-psychiatrist",
+          "slug": "when-to-seek-help",
+          "score": 0.8584539832503442,
+          "source": "article"
+        },
+        {
+          "id": "article:populations/athlete-mental-health#faq-what-is-the-difference-between-a-sport-psychologist-and-a-clinical-psychologist",
+          "slug": "athlete-mental-health",
+          "score": 0.738734124531589,
+          "source": "article"
+        },
+        {
+          "id": "article:concepts/when-to-see-a-psychiatrist#faq-what-is-the-difference-between-a-psychologist-and-a-therapist-with-a-master-s-degree",
+          "slug": "when-to-see-a-psychiatrist",
+          "score": 0.7203203226194229,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 85,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_146",
+      "question": "Do SSRIs work?",
+      "category": "edge_case",
+      "difficulty": "medium",
+      "recall_at_3": 0,
+      "recall_at_5": 0,
+      "recall_at_8": 0,
+      "mrr": 0,
+      "ndcg_at_10": 0,
+      "top_results": [
+        {
+          "id": "article:neuroscience/serotonin#faq-if-the-chemical-imbalance-theory-is-wrong-why-do-ssris-still-work",
+          "slug": "serotonin",
+          "score": 0.968174003503309,
+          "source": "article"
+        },
+        {
+          "id": "article:treatments/ssris#what-are-ssris-and-how-do-they-work",
+          "slug": "ssris",
+          "score": 0.9306626171613144,
+          "source": "article"
+        },
+        {
+          "id": "article:treatments/ssris#how-ssris-compare-to-other-treatments",
+          "slug": "ssris",
+          "score": 0.8744879376720053,
+          "source": "article"
+        },
+        {
+          "id": "article:treatments/ssris#when-to-seek-professional-help",
+          "slug": "ssris",
+          "score": 0.8487426034365353,
+          "source": "article"
+        },
+        {
+          "id": "article:treatments/ssris#potential-side-effects-and-risks",
+          "slug": "ssris",
+          "score": 0.848101880118669,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "major_depressive_disorder"
+      ],
+      "latency_ms": 84,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_141",
+      "question": "What is the most common mental illness?",
+      "category": "edge_case",
+      "difficulty": "easy",
+      "recall_at_3": 0,
+      "recall_at_5": 0,
+      "recall_at_8": 0,
+      "mrr": 0,
+      "ndcg_at_10": 0,
+      "top_results": [
+        {
+          "id": "article:populations/mental-health-children#faq-what-is-the-most-common-mental-health-disorder-in-children",
+          "slug": "mental-health-children",
+          "score": 0.8809673926331067,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/paranoia#faq-is-paranoia-always-a-sign-of-a-serious-mental-illness",
+          "slug": "paranoia",
+          "score": 0.8096126089821107,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/stigma#faq-which-mental-health-conditions-are-most-stigmatized",
+          "slug": "stigma",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/comorbidity#faq-what-is-an-example-of-comorbidity-in-mental-health",
+          "slug": "comorbidity",
+          "score": 0.5859563287405932,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/comorbidity#clinical-context-and-prevalence",
+          "slug": "comorbidity",
+          "score": 0.5342446171290748,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "generalized_anxiety_disorder",
+        "major_depressive_disorder"
+      ],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_147",
+      "question": "My 5-year-old has mood swings, is it bipolar?",
+      "category": "edge_case",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 0.3333333333333333,
+      "ndcg_at_10": 0.5,
+      "top_results": [
+        {
+          "id": "article:symptoms/mood-swings#common-conditions-associated-with-mood-swings",
+          "slug": "mood-swings",
+          "score": 0.9757077448345755,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/mood-swings#faq-are-mood-swings-a-sign-of-bipolar-disorder",
+          "slug": "mood-swings",
+          "score": 0.9336008139279554,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/bipolar#definition",
+          "slug": "bipolar",
+          "score": 0.8323617323114402,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/bipolar#related-terms",
+          "slug": "bipolar",
+          "score": 0.8025811978096298,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/mood-swings#the-importance-of-accurate-diagnosis",
+          "slug": "mood-swings",
+          "score": 0.8017678830529442,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [
+        "bipolar_i_disorder"
+      ],
+      "latency_ms": 91,
+      "embedding_available": true,
+      "reranked": false
+    },
+    {
+      "id": "eval_149",
+      "question": "Tell me everything about every mental disorder",
+      "category": "edge_case",
+      "difficulty": "hard",
+      "recall_at_3": 1,
+      "recall_at_5": 1,
+      "recall_at_8": 1,
+      "mrr": 1,
+      "ndcg_at_10": 1,
+      "top_results": [
+        {
+          "id": "article:glossary/mental-health#mental-health-vs-mental-illness",
+          "slug": "mental-health",
+          "score": 0.6,
+          "source": "article"
+        },
+        {
+          "id": "article:symptoms/perfectionism#faq-is-perfectionism-a-mental-illness",
+          "slug": "perfectionism",
+          "score": 0.5942852146485733,
+          "source": "article"
+        },
+        {
+          "id": "npd:major_depressive_disorder:rule-outs",
+          "slug": "major_depressive_disorder",
+          "score": 0.5900070207008922,
+          "source": "non_pd"
+        },
+        {
+          "id": "article:glossary/stigma#faq-which-mental-health-conditions-are-most-stigmatized",
+          "slug": "stigma",
+          "score": 0.5860313412914985,
+          "source": "article"
+        },
+        {
+          "id": "article:glossary/dual-diagnosis#clinical-context",
+          "slug": "dual-diagnosis",
+          "score": 0.570161006869648,
+          "source": "article"
+        }
+      ],
+      "expected_slugs": [],
+      "latency_ms": 86,
+      "embedding_available": true,
+      "reranked": false
+    }
+  ]
+}

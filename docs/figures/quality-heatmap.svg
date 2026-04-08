@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 260" width="500" height="260" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+  <rect width="500" height="260" fill="white"/>
+  <text x="250" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">Quality Scores by Category</text>
+  <text x="165" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Correct</text>
+  <text x="255" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Complete</text>
+  <text x="345" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Ground</text>
+  <text x="435" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Safety</text>
+  <text x="112" y="82" text-anchor="end" font-size="10" fill="#374151">clinical_depth (n=41)</text>
+  <rect x="122" y="62" width="86" height="32" fill="rgb(112, 227, 88)" rx="3" opacity="0.7"/>
+  <text x="165" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.17</text>
+  <rect x="212" y="62" width="86" height="32" fill="rgb(102, 234, 86)" rx="3" opacity="0.7"/>
+  <text x="255" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.39</text>
+  <rect x="302" y="62" width="86" height="32" fill="rgb(111, 228, 88)" rx="3" opacity="0.7"/>
+  <text x="345" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.20</text>
+  <rect x="392" y="62" width="86" height="32" fill="rgb(84, 248, 82)" rx="3" opacity="0.7"/>
+  <text x="435" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.80</text>
+  <text x="112" y="118" text-anchor="end" font-size="10" fill="#374151">differential (n=14)</text>
+  <rect x="122" y="98" width="86" height="32" fill="rgb(101, 236, 86)" rx="3" opacity="0.7"/>
+  <text x="165" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.43</text>
+  <rect x="212" y="98" width="86" height="32" fill="rgb(101, 236, 86)" rx="3" opacity="0.7"/>
+  <text x="255" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.43</text>
+  <rect x="302" y="98" width="86" height="32" fill="rgb(117, 224, 89)" rx="3" opacity="0.7"/>
+  <text x="345" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.07</text>
+  <rect x="392" y="98" width="86" height="32" fill="rgb(88, 245, 83)" rx="3" opacity="0.7"/>
+  <text x="435" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.71</text>
+  <text x="112" y="154" text-anchor="end" font-size="10" fill="#374151">edge_case (n=9)</text>
+  <rect x="122" y="134" width="86" height="32" fill="rgb(85, 248, 82)" rx="3" opacity="0.7"/>
+  <text x="165" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.78</text>
+  <rect x="212" y="134" width="86" height="32" fill="rgb(85, 248, 82)" rx="3" opacity="0.7"/>
+  <text x="255" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.78</text>
+  <rect x="302" y="134" width="86" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="345" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="392" y="134" width="86" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="435" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <text x="112" y="190" text-anchor="end" font-size="10" fill="#374151">safety (n=9)</text>
+  <rect x="122" y="170" width="86" height="32" fill="rgb(105, 233, 87)" rx="3" opacity="0.7"/>
+  <text x="165" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.33</text>
+  <rect x="212" y="170" width="86" height="32" fill="rgb(115, 225, 89)" rx="3" opacity="0.7"/>
+  <text x="255" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.11</text>
+  <rect x="302" y="170" width="86" height="32" fill="rgb(125, 218, 91)" rx="3" opacity="0.7"/>
+  <text x="345" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">3.89</text>
+  <rect x="392" y="170" width="86" height="32" fill="rgb(90, 244, 83)" rx="3" opacity="0.7"/>
+  <text x="435" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.67</text>
+  <text x="112" y="226" text-anchor="end" font-size="10" fill="#374151">scope (n=34)</text>
+  <rect x="122" y="206" width="86" height="32" fill="rgb(104, 233, 86)" rx="3" opacity="0.7"/>
+  <text x="165" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.35</text>
+  <rect x="212" y="206" width="86" height="32" fill="rgb(105, 232, 87)" rx="3" opacity="0.7"/>
+  <text x="255" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.32</text>
+  <rect x="302" y="206" width="86" height="32" fill="rgb(105, 232, 87)" rx="3" opacity="0.7"/>
+  <text x="345" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.32</text>
+  <rect x="392" y="206" width="86" height="32" fill="rgb(88, 245, 83)" rx="3" opacity="0.7"/>
+  <text x="435" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.71</text>
+
+</svg>

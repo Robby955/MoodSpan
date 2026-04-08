@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+  <rect width="700" height="400" fill="white"/>
+  <line x1="60" y1="320" x2="680" y2="320" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="52" y="324" text-anchor="end" font-size="10" fill="#6b7280">0%</text>
+  <line x1="60" y1="264" x2="680" y2="264" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="52" y="268" text-anchor="end" font-size="10" fill="#6b7280">20%</text>
+  <line x1="60" y1="208" x2="680" y2="208" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="52" y="212" text-anchor="end" font-size="10" fill="#6b7280">40%</text>
+  <line x1="60" y1="152" x2="680" y2="152" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="52" y="156" text-anchor="end" font-size="10" fill="#6b7280">60%</text>
+  <line x1="60" y1="96" x2="680" y2="96" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="52" y="100" text-anchor="end" font-size="10" fill="#6b7280">80%</text>
+  <line x1="60" y1="40" x2="680" y2="40" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="52" y="44" text-anchor="end" font-size="10" fill="#6b7280">100%</text>
+  <rect x="71" y="145.74468085106383" width="30" height="174.25531914893617" fill="#0f766e" rx="2"/>
+  <text x="86" y="141.74468085106383" text-anchor="middle" font-size="10" fill="#374151">62.2</text>
+  <rect x="105" y="120.42553191489361" width="30" height="199.5744680851064" fill="#d97706" rx="2"/>
+  <text x="120" y="116.42553191489361" text-anchor="middle" font-size="10" fill="#374151">71.3</text>
+  <rect x="139" y="96.59574468085106" width="30" height="223.40425531914894" fill="#6366f1" rx="2"/>
+  <text x="154" y="92.59574468085106" text-anchor="middle" font-size="10" fill="#374151">79.8</text>
+  <rect x="195" y="117.44680851063828" width="30" height="202.55319148936172" fill="#0f766e" rx="2"/>
+  <text x="210" y="113.44680851063828" text-anchor="middle" font-size="10" fill="#374151">72.3</text>
+  <rect x="229" y="96.59574468085106" width="30" height="223.40425531914894" fill="#d97706" rx="2"/>
+  <text x="244" y="92.59574468085106" text-anchor="middle" font-size="10" fill="#374151">79.8</text>
+  <rect x="263" y="75.74468085106383" width="30" height="244.25531914893617" fill="#6366f1" rx="2"/>
+  <text x="278" y="71.74468085106383" text-anchor="middle" font-size="10" fill="#374151">87.2</text>
+  <rect x="319" y="68.29787234042553" width="30" height="251.70212765957447" fill="#0f766e" rx="2"/>
+  <text x="334" y="64.29787234042553" text-anchor="middle" font-size="10" fill="#374151">89.9</text>
+  <rect x="353" y="62.34042553191489" width="30" height="257.6595744680851" fill="#d97706" rx="2"/>
+  <text x="368" y="58.34042553191489" text-anchor="middle" font-size="10" fill="#374151">92.0</text>
+  <rect x="387" y="59.361702127659555" width="30" height="260.63829787234044" fill="#6366f1" rx="2"/>
+  <text x="402" y="55.361702127659555" text-anchor="middle" font-size="10" fill="#374151">93.1</text>
+  <rect x="443" y="68.29787234042553" width="30" height="251.70212765957447" fill="#0f766e" rx="2"/>
+  <text x="458" y="64.29787234042553" text-anchor="middle" font-size="10" fill="#374151">89.9</text>
+  <rect x="477" y="63.829787234042556" width="30" height="256.17021276595744" fill="#d97706" rx="2"/>
+  <text x="492" y="59.829787234042556" text-anchor="middle" font-size="10" fill="#374151">91.5</text>
+  <rect x="511" y="56.38297872340422" width="30" height="263.6170212765958" fill="#6366f1" rx="2"/>
+  <text x="526" y="52.38297872340422" text-anchor="middle" font-size="10" fill="#374151">94.1</text>
+  <rect x="567" y="68.29787234042553" width="30" height="251.70212765957447" fill="#0f766e" rx="2"/>
+  <text x="582" y="64.29787234042553" text-anchor="middle" font-size="10" fill="#374151">89.9</text>
+  <rect x="601" y="62.34042553191489" width="30" height="257.6595744680851" fill="#d97706" rx="2"/>
+  <text x="616" y="58.34042553191489" text-anchor="middle" font-size="10" fill="#374151">92.0</text>
+  <rect x="635" y="59.361702127659555" width="30" height="260.63829787234044" fill="#6366f1" rx="2"/>
+  <text x="650" y="55.361702127659555" text-anchor="middle" font-size="10" fill="#374151">93.1</text>
+  <text x="122" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 122, 336)">bm25-raw</text>
+  <text x="246" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 246, 336)">bm25-expanded</text>
+  <text x="370" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 370, 336)">hybrid</text>
+  <text x="494" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 494, 336)">hybrid-rerank</text>
+  <text x="618" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 618, 336)">hybrid-decompose</text>
+  <rect x="60" y="380" width="12" height="12" fill="#0f766e" rx="2"/>
+  <text x="76" y="390" font-size="11" fill="#374151">Recall@3</text>
+  <rect x="160" y="380" width="12" height="12" fill="#d97706" rx="2"/>
+  <text x="176" y="390" font-size="11" fill="#374151">Recall@5</text>
+  <rect x="260" y="380" width="12" height="12" fill="#6366f1" rx="2"/>
+  <text x="276" y="390" font-size="11" fill="#374151">Recall@8</text>
+  <text x="350" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">Retrieval Recall by Pipeline Configuration</text>
+
+</svg>

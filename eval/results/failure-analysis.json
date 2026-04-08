@@ -1,0 +1,173 @@
+{
+  "timestamp": "2026-04-04T21:52:33.693Z",
+  "eval_source": "latest.json",
+  "summary": {
+    "total_queries": 107,
+    "queries_with_failures": 10,
+    "total_missing_slugs": 12,
+    "data_gap": 2,
+    "ranking_failure": 4,
+    "embedding_mismatch": 2,
+    "query_mismatch": 4
+  },
+  "by_category": {
+    "scope": {
+      "data_gap": 1,
+      "ranking_failure": 0,
+      "embedding_mismatch": 1,
+      "query_mismatch": 0
+    },
+    "differential": {
+      "data_gap": 1,
+      "ranking_failure": 3,
+      "embedding_mismatch": 0,
+      "query_mismatch": 1
+    },
+    "edge_case": {
+      "data_gap": 0,
+      "ranking_failure": 1,
+      "embedding_mismatch": 1,
+      "query_mismatch": 3
+    }
+  },
+  "details": [
+    {
+      "query_id": "eval_027",
+      "question": "What is the PHQ-2?",
+      "category": "scope",
+      "missing_slug": "phq2",
+      "failure_type": "data_gap",
+      "evidence": {
+        "slug_exists_in_index": false
+      }
+    },
+    {
+      "query_id": "eval_027",
+      "question": "What is the PHQ-2?",
+      "category": "scope",
+      "missing_slug": "major_depressive_disorder",
+      "failure_type": "embedding_mismatch",
+      "evidence": {
+        "vector_similarity": 0.1134,
+        "threshold": 0.3
+      }
+    },
+    {
+      "query_id": "eval_396",
+      "question": "How do you distinguish Bipolar II Disorder from Major Depressive Disorder?",
+      "category": "differential",
+      "missing_slug": "major_depressive_disorder",
+      "failure_type": "query_mismatch",
+      "evidence": {
+        "vector_similarity": 0.5325,
+        "note": "Decent embedding match but BM25 keyword gap"
+      }
+    },
+    {
+      "query_id": "eval_061",
+      "question": "What is the difference between Borderline Personality Disorder and Bipolar Disorder?",
+      "category": "differential",
+      "missing_slug": "bipolar_i_disorder",
+      "failure_type": "ranking_failure",
+      "evidence": {
+        "found_at_rank": 20,
+        "score": 0.7038782144087621,
+        "vector_score": 0.7199383622492964,
+        "bm25_score": 0.6797879926479607
+      }
+    },
+    {
+      "query_id": "eval_062",
+      "question": "What is the difference between ADHD and Bipolar Disorder?",
+      "category": "differential",
+      "missing_slug": "adhd",
+      "failure_type": "ranking_failure",
+      "evidence": {
+        "found_at_rank": 9,
+        "score": 0.7339389920331798,
+        "vector_score": 0.7991935505743347,
+        "bm25_score": 0.6360571542214475
+      }
+    },
+    {
+      "query_id": "eval_083",
+      "question": "What is the difference between Body Dysmorphic Disorder and OCD?",
+      "category": "differential",
+      "missing_slug": "ocd",
+      "failure_type": "data_gap",
+      "evidence": {
+        "slug_exists_in_index": false
+      }
+    },
+    {
+      "query_id": "eval_400",
+      "question": "How do you distinguish Body Dysmorphic Disorder from Social Anxiety Disorder?",
+      "category": "differential",
+      "missing_slug": "social_anxiety_disorder",
+      "failure_type": "ranking_failure",
+      "evidence": {
+        "found_at_rank": 3,
+        "score": 0.7173456227826438,
+        "vector_score": 0.6906937607781025,
+        "bm25_score": 0.7573234157894556
+      }
+    },
+    {
+      "query_id": "eval_124",
+      "question": "Can anxiety be a good thing?",
+      "category": "edge_case",
+      "missing_slug": "generalized_anxiety_disorder",
+      "failure_type": "query_mismatch",
+      "evidence": {
+        "vector_similarity": 0.4544,
+        "note": "Decent embedding match but BM25 keyword gap"
+      }
+    },
+    {
+      "query_id": "eval_125",
+      "question": "Is narcissism always bad?",
+      "category": "edge_case",
+      "missing_slug": "narcissistic_pd",
+      "failure_type": "ranking_failure",
+      "evidence": {
+        "found_at_rank": 8,
+        "score": 0.866308386116831,
+        "vector_score": 0.833081318267743,
+        "bm25_score": 0.9161489878904633
+      }
+    },
+    {
+      "query_id": "eval_146",
+      "question": "Do SSRIs work?",
+      "category": "edge_case",
+      "missing_slug": "major_depressive_disorder",
+      "failure_type": "embedding_mismatch",
+      "evidence": {
+        "vector_similarity": 0.2528,
+        "threshold": 0.3
+      }
+    },
+    {
+      "query_id": "eval_141",
+      "question": "What is the most common mental illness?",
+      "category": "edge_case",
+      "missing_slug": "generalized_anxiety_disorder",
+      "failure_type": "query_mismatch",
+      "evidence": {
+        "vector_similarity": 0.3072,
+        "note": "Decent embedding match but BM25 keyword gap"
+      }
+    },
+    {
+      "query_id": "eval_141",
+      "question": "What is the most common mental illness?",
+      "category": "edge_case",
+      "missing_slug": "major_depressive_disorder",
+      "failure_type": "query_mismatch",
+      "evidence": {
+        "vector_similarity": 0.4106,
+        "note": "Decent embedding match but BM25 keyword gap"
+      }
+    }
+  ]
+}

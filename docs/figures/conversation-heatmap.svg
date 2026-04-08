@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 368" width="640" height="368" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+  <rect width="640" height="368" fill="white"/>
+  <text x="320" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">Conversation Quality by Category</text>
+  <text x="180" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Relev</text>
+  <text x="260" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Ground</text>
+  <text x="340" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Tone</text>
+  <text x="420" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Safety</text>
+  <text x="500" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Coher</text>
+  <text x="580" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">Helpful</text>
+  <text x="132" y="82" text-anchor="end" font-size="10" fill="#374151">clinical_comparison (n=5)</text>
+  <rect x="142" y="62" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="180" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="222" y="62" width="76" height="32" fill="rgb(99, 237, 85)" rx="3" opacity="0.7"/>
+  <text x="260" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.47</text>
+  <rect x="302" y="62" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="340" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="382" y="62" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="420" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="462" y="62" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="500" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="542" y="62" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="580" y="82" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <text x="132" y="118" text-anchor="end" font-size="10" fill="#374151">crisis_escalation (n=4)</text>
+  <rect x="142" y="98" width="76" height="32" fill="rgb(79, 252, 81)" rx="3" opacity="0.7"/>
+  <text x="180" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.92</text>
+  <rect x="222" y="98" width="76" height="32" fill="rgb(90, 244, 83)" rx="3" opacity="0.7"/>
+  <text x="260" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.67</text>
+  <rect x="302" y="98" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="340" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="382" y="98" width="76" height="32" fill="rgb(83, 249, 82)" rx="3" opacity="0.7"/>
+  <text x="420" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.83</text>
+  <rect x="462" y="98" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="500" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="542" y="98" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="580" y="118" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <text x="132" y="154" text-anchor="end" font-size="10" fill="#374151">diagnostic_clarification (n=5)</text>
+  <rect x="142" y="134" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="180" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="222" y="134" width="76" height="32" fill="rgb(89, 244, 83)" rx="3" opacity="0.7"/>
+  <text x="260" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.69</text>
+  <rect x="302" y="134" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="340" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="382" y="134" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="420" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="462" y="134" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="500" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="542" y="134" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="580" y="154" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <text x="132" y="190" text-anchor="end" font-size="10" fill="#374151">multi_topic (n=5)</text>
+  <rect x="142" y="170" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="180" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="222" y="170" width="76" height="32" fill="rgb(88, 246, 83)" rx="3" opacity="0.7"/>
+  <text x="260" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.72</text>
+  <rect x="302" y="170" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="340" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="382" y="170" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="420" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="462" y="170" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="500" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="542" y="170" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="580" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <text x="132" y="226" text-anchor="end" font-size="10" fill="#374151">scope_boundary (n=5)</text>
+  <rect x="142" y="206" width="76" height="32" fill="rgb(90, 244, 83)" rx="3" opacity="0.7"/>
+  <text x="180" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.67</text>
+  <rect x="222" y="206" width="76" height="32" fill="rgb(96, 239, 85)" rx="3" opacity="0.7"/>
+  <text x="260" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.53</text>
+  <rect x="302" y="206" width="76" height="32" fill="rgb(78, 253, 81)" rx="3" opacity="0.7"/>
+  <text x="340" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.93</text>
+  <rect x="382" y="206" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="420" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="462" y="206" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="500" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="542" y="206" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="580" y="226" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <text x="132" y="262" text-anchor="end" font-size="10" fill="#374151">screener_followup (n=5)</text>
+  <rect x="142" y="242" width="76" height="32" fill="rgb(81, 251, 81)" rx="3" opacity="0.7"/>
+  <text x="180" y="262" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.87</text>
+  <rect x="222" y="242" width="76" height="32" fill="rgb(102, 235, 86)" rx="3" opacity="0.7"/>
+  <text x="260" y="262" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.40</text>
+  <rect x="302" y="242" width="76" height="32" fill="rgb(78, 253, 81)" rx="3" opacity="0.7"/>
+  <text x="340" y="262" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.93</text>
+  <rect x="382" y="242" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="420" y="262" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="462" y="242" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="500" y="262" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="542" y="242" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="580" y="262" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <text x="132" y="298" text-anchor="end" font-size="10" fill="#374151">symptom_exploration (n=6)</text>
+  <rect x="142" y="278" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="180" y="298" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="222" y="278" width="76" height="32" fill="rgb(100, 236, 86)" rx="3" opacity="0.7"/>
+  <text x="260" y="298" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.45</text>
+  <rect x="302" y="278" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="340" y="298" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="382" y="278" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="420" y="298" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="462" y="278" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="500" y="298" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="542" y="278" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="580" y="298" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <text x="132" y="334" text-anchor="end" font-size="10" fill="#374151">treatment_journey (n=5)</text>
+  <rect x="142" y="314" width="76" height="32" fill="rgb(86, 247, 83)" rx="3" opacity="0.7"/>
+  <text x="180" y="334" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.75</text>
+  <rect x="222" y="314" width="76" height="32" fill="rgb(98, 238, 85)" rx="3" opacity="0.7"/>
+  <text x="260" y="334" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.50</text>
+  <rect x="302" y="314" width="76" height="32" fill="rgb(83, 249, 82)" rx="3" opacity="0.7"/>
+  <text x="340" y="334" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">4.81</text>
+  <rect x="382" y="314" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="420" y="334" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="462" y="314" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="500" y="334" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+  <rect x="542" y="314" width="76" height="32" fill="rgb(75, 255, 80)" rx="3" opacity="0.7"/>
+  <text x="580" y="334" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">5.00</text>
+
+</svg>
