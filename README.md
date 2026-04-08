@@ -238,15 +238,20 @@ eval/
 
 ## Related Work & References
 
-Architecture and evaluation decisions are informed by:
+This is an **agentic RAG system** (Retrieval-Augmented Generation with tool-calling agent loop) — a bounded ReAct-pattern implementation with domain-specific constraints for clinical education.
 
-- **Hybrid retrieval:** Reciprocal Rank Fusion for combining dense/sparse signals. [Cormack et al., 2009]
-- **RAG evaluation:** RAGAS framework for automated eval of retrieval-augmented systems. [ES et al., arXiv:2309.15217]
-- **Tool-augmented LLMs:** Toolformer's approach to tool-calling; ReAct for reasoning + acting loops. [Schick et al., arXiv:2302.04761] [Yao et al., arXiv:2210.03629]
-- **LLM-as-judge:** MT-Bench methodology for automated response quality scoring. [Zheng et al., arXiv:2306.05685]
-- **AI safety taxonomy:** Risk categorization for language model deployments. [Weidinger et al., arXiv:2112.04359]
-- **Clinical NLP:** MedCPT for domain-specific retrieval in biomedical text. [Wang et al., arXiv:2307.00589]
-- **Agentic AI (2025-2026):** Bounded tool-calling with forced retrieval on round 1, cost-aware model routing (Groq for throughput, Claude Opus for complex reasoning), constitutional principles as alignment mechanism without separate API calls.
+| Paper | How It Relates |
+|---|---|
+| ReAct (Yao et al., [arXiv:2210.03629](https://arxiv.org/abs/2210.03629)) | Agentic loop pattern — reasoning + acting with tool calls |
+| Self-RAG (Asai et al., [arXiv:2310.11511](https://arxiv.org/abs/2310.11511)) | Forced vs optional retrieval — when should the model retrieve? |
+| Toolformer (Schick et al., [arXiv:2302.04761](https://arxiv.org/abs/2302.04761)) | Tool-augmented LLMs; groundedness collapse when tools are optional |
+| RAGAS (ES et al., [arXiv:2309.15217](https://arxiv.org/abs/2309.15217)) | Evaluation framework for RAG systems |
+| MT-Bench (Zheng et al., [arXiv:2306.05685](https://arxiv.org/abs/2306.05685)) | LLM-as-judge methodology |
+| Constitutional AI (Bai et al., [arXiv:2212.08073](https://arxiv.org/abs/2212.08073)) | Behavioral principles in system prompt |
+| CRAG (Yan et al., [arXiv:2401.15884](https://arxiv.org/abs/2401.15884)) | Corrective RAG — evaluating retrieval quality before generation |
+| MedCPT (Wang et al., [arXiv:2307.00589](https://arxiv.org/abs/2307.00589)) | Domain-adapted clinical embeddings (identified next step) |
+| Gorilla (Patil et al., [arXiv:2305.15334](https://arxiv.org/abs/2305.15334)) | LLM tool selection accuracy |
+| Risk Taxonomy (Weidinger et al., [arXiv:2112.04359](https://arxiv.org/abs/2112.04359)) | Safety architecture for health-adjacent AI |
 
 ---
 
