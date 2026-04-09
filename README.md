@@ -1,8 +1,8 @@
 # MoodSpan
 
-Tool-augmented RAG system for mental health education. Multi-step tool-calling loop over a curated clinical knowledge base, with hybrid dense-sparse retrieval and multi-layer safety controls.
+Agentic mental health assistant that reasons over a curated clinical knowledge base using a multi-step tool-calling loop, hybrid dense-sparse retrieval, and multi-layer safety controls. 560 tests. Full ablation study with bootstrap CIs. Production at scale on Vercel.
 
-Live at [moodspan.org](https://moodspan.org). Source code is in a private repo. This repo contains the technical paper, evaluation results, and sample outputs.
+Live at [moodspan.org](https://moodspan.org). Try the [live showcase](https://moodspan.org/showcase) to see structured comparisons, differential diagnosis, and sub-3s clinical reasoning.
 
 **[Multi-turn conversation examples](EXAMPLES.md)** | **[Technical paper](docs/moodspan-technical-paper.md)** | **[Raw eval data](eval/results/)**
 
@@ -169,12 +169,12 @@ The gap between internal (92-94%) and external (26-58%) benchmarks reflects the 
 | Vector store | Postgres + pgvector (IVFFlat index) |
 | Cache / rate limit | Redis |
 | Deployment | Vercel |
-| Testing | 303 unit tests (Vitest) + E2E (Playwright) |
+| Testing | 560 unit tests (Vitest) + E2E (Playwright) |
 | CI/CD | GitHub Actions |
 
 ## Research Context
 
-This is a tool-augmented RAG system: a bounded multi-step implementation with domain-specific constraints for clinical education. Key design decisions were informed by:
+This is a bounded agentic system with domain-specific constraints for clinical education. Key design decisions were informed by:
 
 | Paper | How it informed the design |
 |---|---|
@@ -191,7 +191,7 @@ This is a tool-augmented RAG system: a bounded multi-step implementation with do
 - **Self-evaluation bias.** The same LLM evaluates its own outputs (LLM-as-judge). No human evaluation has been conducted.
 - **Single-turn hallucination rate is 27%.** The model supplements retrieved context with parametric knowledge. Multi-turn conversations show lower hallucination in qualitative inspection, but this has not been rigorously measured.
 - **Knowledge base is LLM-generated.** No clinical reviewer has validated the content. The system is for education, not clinical decision-making.
-- **No inline citations.** Sources are shown in the UI but there is no claim-to-chunk traceability.
+- **Inline citations are heuristic.** Citations map claims to source chunks via index markers, but are not verified end-to-end against ground truth.
 - **In-distribution eval ceiling.** The 92% Recall@5 is measured on queries derived from the same KB. External benchmarks (26-58%) are a more realistic measure.
 - **Internal benchmarks are self-authored.** The clinical exams were written by the developer (not a clinician) and have not been externally validated.
 
