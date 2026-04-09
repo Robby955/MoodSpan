@@ -1,8 +1,8 @@
 # MoodSpan
 
-Agentic mental health assistant that reasons over a curated clinical knowledge base using a multi-step tool-calling loop, hybrid dense-sparse retrieval, and multi-layer safety controls. 560 tests. Full ablation study with bootstrap CIs. Production at scale on Vercel.
+Hybrid-search clinical QA system with an agentic 4-tool reasoning loop, ablation-tested retrieval pipeline, and structured diagnostic reasoning. 438-query eval suite with bootstrap confidence intervals. 92% internal Recall@5, 26% on external MHQA-Gold — both numbers shown honestly.
 
-Live at [moodspan.org](https://moodspan.org). Try the [live showcase](https://moodspan.org/showcase) to see structured comparisons, differential diagnosis, and sub-3s clinical reasoning.
+Live at [moodspan.org](https://moodspan.org). Architecture walkthrough at [/research](https://moodspan.org/research). Live demo replay at [/showcase](https://moodspan.org/showcase).
 
 **[Multi-turn conversation examples](EXAMPLES.md)** | **[Technical paper](docs/moodspan-technical-paper.md)** | **[Raw eval data](eval/results/)**
 
@@ -169,7 +169,7 @@ The gap between internal (92-94%) and external (26-58%) benchmarks reflects the 
 | Vector store | Postgres + pgvector (IVFFlat index) |
 | Cache / rate limit | Redis |
 | Deployment | Vercel |
-| Testing | 560 unit tests (Vitest) + E2E (Playwright) |
+| Testing | 246+ unit tests (Vitest) + E2E (Playwright) |
 | CI/CD | GitHub Actions |
 
 ## Research Context
