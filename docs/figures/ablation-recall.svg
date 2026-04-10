@@ -1,59 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
-  <rect width="700" height="400" fill="white"/>
-  <line x1="60" y1="320" x2="680" y2="320" stroke="#e5e7eb" stroke-width="1"/>
-  <text x="52" y="324" text-anchor="end" font-size="10" fill="#6b7280">0%</text>
-  <line x1="60" y1="264" x2="680" y2="264" stroke="#e5e7eb" stroke-width="1"/>
-  <text x="52" y="268" text-anchor="end" font-size="10" fill="#6b7280">20%</text>
-  <line x1="60" y1="208" x2="680" y2="208" stroke="#e5e7eb" stroke-width="1"/>
-  <text x="52" y="212" text-anchor="end" font-size="10" fill="#6b7280">40%</text>
-  <line x1="60" y1="152" x2="680" y2="152" stroke="#e5e7eb" stroke-width="1"/>
-  <text x="52" y="156" text-anchor="end" font-size="10" fill="#6b7280">60%</text>
-  <line x1="60" y1="96" x2="680" y2="96" stroke="#e5e7eb" stroke-width="1"/>
-  <text x="52" y="100" text-anchor="end" font-size="10" fill="#6b7280">80%</text>
-  <line x1="60" y1="40" x2="680" y2="40" stroke="#e5e7eb" stroke-width="1"/>
-  <text x="52" y="44" text-anchor="end" font-size="10" fill="#6b7280">100%</text>
-  <rect x="71" y="145.74468085106383" width="30" height="174.25531914893617" fill="#0f766e" rx="2"/>
-  <text x="86" y="141.74468085106383" text-anchor="middle" font-size="10" fill="#374151">62.2</text>
-  <rect x="105" y="120.42553191489361" width="30" height="199.5744680851064" fill="#d97706" rx="2"/>
-  <text x="120" y="116.42553191489361" text-anchor="middle" font-size="10" fill="#374151">71.3</text>
-  <rect x="139" y="96.59574468085106" width="30" height="223.40425531914894" fill="#6366f1" rx="2"/>
-  <text x="154" y="92.59574468085106" text-anchor="middle" font-size="10" fill="#374151">79.8</text>
-  <rect x="195" y="117.44680851063828" width="30" height="202.55319148936172" fill="#0f766e" rx="2"/>
-  <text x="210" y="113.44680851063828" text-anchor="middle" font-size="10" fill="#374151">72.3</text>
-  <rect x="229" y="96.59574468085106" width="30" height="223.40425531914894" fill="#d97706" rx="2"/>
-  <text x="244" y="92.59574468085106" text-anchor="middle" font-size="10" fill="#374151">79.8</text>
-  <rect x="263" y="75.74468085106383" width="30" height="244.25531914893617" fill="#6366f1" rx="2"/>
-  <text x="278" y="71.74468085106383" text-anchor="middle" font-size="10" fill="#374151">87.2</text>
-  <rect x="319" y="68.29787234042553" width="30" height="251.70212765957447" fill="#0f766e" rx="2"/>
-  <text x="334" y="64.29787234042553" text-anchor="middle" font-size="10" fill="#374151">89.9</text>
-  <rect x="353" y="62.34042553191489" width="30" height="257.6595744680851" fill="#d97706" rx="2"/>
-  <text x="368" y="58.34042553191489" text-anchor="middle" font-size="10" fill="#374151">92.0</text>
-  <rect x="387" y="59.361702127659555" width="30" height="260.63829787234044" fill="#6366f1" rx="2"/>
-  <text x="402" y="55.361702127659555" text-anchor="middle" font-size="10" fill="#374151">93.1</text>
-  <rect x="443" y="68.29787234042553" width="30" height="251.70212765957447" fill="#0f766e" rx="2"/>
-  <text x="458" y="64.29787234042553" text-anchor="middle" font-size="10" fill="#374151">89.9</text>
-  <rect x="477" y="63.829787234042556" width="30" height="256.17021276595744" fill="#d97706" rx="2"/>
-  <text x="492" y="59.829787234042556" text-anchor="middle" font-size="10" fill="#374151">91.5</text>
-  <rect x="511" y="56.38297872340422" width="30" height="263.6170212765958" fill="#6366f1" rx="2"/>
-  <text x="526" y="52.38297872340422" text-anchor="middle" font-size="10" fill="#374151">94.1</text>
-  <rect x="567" y="68.29787234042553" width="30" height="251.70212765957447" fill="#0f766e" rx="2"/>
-  <text x="582" y="64.29787234042553" text-anchor="middle" font-size="10" fill="#374151">89.9</text>
-  <rect x="601" y="62.34042553191489" width="30" height="257.6595744680851" fill="#d97706" rx="2"/>
-  <text x="616" y="58.34042553191489" text-anchor="middle" font-size="10" fill="#374151">92.0</text>
-  <rect x="635" y="59.361702127659555" width="30" height="260.63829787234044" fill="#6366f1" rx="2"/>
-  <text x="650" y="55.361702127659555" text-anchor="middle" font-size="10" fill="#374151">93.1</text>
-  <text x="122" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 122, 336)">bm25-raw</text>
-  <text x="246" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 246, 336)">bm25-expanded</text>
-  <text x="370" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 370, 336)">hybrid</text>
-  <text x="494" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 494, 336)">hybrid-rerank</text>
-  <text x="618" y="336" text-anchor="end" font-size="11" fill="#374151" transform="rotate(-30, 618, 336)">hybrid-decompose</text>
-  <rect x="60" y="380" width="12" height="12" fill="#0f766e" rx="2"/>
-  <text x="76" y="390" font-size="11" fill="#374151">Recall@3</text>
-  <rect x="160" y="380" width="12" height="12" fill="#d97706" rx="2"/>
-  <text x="176" y="390" font-size="11" fill="#374151">Recall@5</text>
-  <rect x="260" y="380" width="12" height="12" fill="#6366f1" rx="2"/>
-  <text x="276" y="390" font-size="11" fill="#374151">Recall@8</text>
-  <text x="350" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">Retrieval Recall by Pipeline Configuration</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="720" height="400" fill="white"/>
+  <text x="380" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">Retrieval Recall by Pipeline Configuration</text>
 
+  <!-- Y axis grid lines and labels -->
+  <line x1="70" y1="320" x2="690" y2="320" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="62" y="324" text-anchor="end" font-size="10" fill="#6b7280">0%</text>
+  <line x1="70" y1="264" x2="690" y2="264" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="62" y="268" text-anchor="end" font-size="10" fill="#6b7280">20%</text>
+  <line x1="70" y1="208" x2="690" y2="208" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="62" y="212" text-anchor="end" font-size="10" fill="#6b7280">40%</text>
+  <line x1="70" y1="152" x2="690" y2="152" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="62" y="156" text-anchor="end" font-size="10" fill="#6b7280">60%</text>
+  <line x1="70" y1="96" x2="690" y2="96" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="62" y="100" text-anchor="end" font-size="10" fill="#6b7280">80%</text>
+  <line x1="70" y1="40" x2="690" y2="40" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="62" y="44" text-anchor="end" font-size="10" fill="#6b7280">100%</text>
+
+  <!-- Group 1: BM25 (center=132) -->
+  <rect x="83" y="146" width="30" height="174" fill="#0f766e" rx="2"/>
+  <text x="98" y="142" text-anchor="middle" font-size="9" fill="#374151">62.2</text>
+  <rect x="117" y="120" width="30" height="200" fill="#d97706" rx="2"/>
+  <text x="132" y="116" text-anchor="middle" font-size="9" fill="#374151">71.3</text>
+  <rect x="151" y="97" width="30" height="223" fill="#6366f1" rx="2"/>
+  <text x="166" y="93" text-anchor="middle" font-size="9" fill="#374151">79.8</text>
+  <text x="132" y="340" text-anchor="middle" font-size="10" fill="#374151">BM25</text>
+
+  <!-- Group 2: BM25+Syn (center=256) -->
+  <rect x="207" y="118" width="30" height="202" fill="#0f766e" rx="2"/>
+  <text x="222" y="114" text-anchor="middle" font-size="9" fill="#374151">72.3</text>
+  <rect x="241" y="97" width="30" height="223" fill="#d97706" rx="2"/>
+  <text x="256" y="93" text-anchor="middle" font-size="9" fill="#374151">79.8</text>
+  <rect x="275" y="76" width="30" height="244" fill="#6366f1" rx="2"/>
+  <text x="290" y="72" text-anchor="middle" font-size="9" fill="#374151">87.2</text>
+  <text x="256" y="340" text-anchor="middle" font-size="10" fill="#374151">BM25+Syn</text>
+
+  <!-- Group 3: Hybrid (center=380) -->
+  <rect x="331" y="68" width="30" height="252" fill="#0f766e" rx="2"/>
+  <text x="346" y="64" text-anchor="middle" font-size="9" fill="#374151">89.9</text>
+  <rect x="365" y="62" width="30" height="258" fill="#d97706" rx="2"/>
+  <text x="380" y="58" text-anchor="middle" font-size="9" fill="#374151">92.0</text>
+  <rect x="399" y="59" width="30" height="261" fill="#6366f1" rx="2"/>
+  <text x="414" y="55" text-anchor="middle" font-size="9" fill="#374151">93.1</text>
+  <text x="380" y="340" text-anchor="middle" font-size="10" fill="#374151">Hybrid</text>
+
+  <!-- Group 4: Hybrid+RR (center=504) -->
+  <rect x="455" y="68" width="30" height="252" fill="#0f766e" rx="2"/>
+  <text x="470" y="64" text-anchor="middle" font-size="9" fill="#374151">89.9</text>
+  <rect x="489" y="64" width="30" height="256" fill="#d97706" rx="2"/>
+  <text x="504" y="60" text-anchor="middle" font-size="9" fill="#374151">91.5</text>
+  <rect x="523" y="57" width="30" height="263" fill="#6366f1" rx="2"/>
+  <text x="538" y="53" text-anchor="middle" font-size="9" fill="#374151">94.1</text>
+  <text x="504" y="340" text-anchor="middle" font-size="10" fill="#374151">Hybrid+RR</text>
+
+  <!-- Group 5: Hybrid+QD (center=628) -->
+  <rect x="579" y="68" width="30" height="252" fill="#0f766e" rx="2"/>
+  <text x="594" y="64" text-anchor="middle" font-size="9" fill="#374151">89.9</text>
+  <rect x="613" y="62" width="30" height="258" fill="#d97706" rx="2"/>
+  <text x="628" y="58" text-anchor="middle" font-size="9" fill="#374151">92.0</text>
+  <rect x="647" y="59" width="30" height="261" fill="#6366f1" rx="2"/>
+  <text x="662" y="55" text-anchor="middle" font-size="9" fill="#374151">93.1</text>
+  <text x="628" y="340" text-anchor="middle" font-size="10" fill="#374151">Hybrid+QD</text>
+
+  <!-- Legend -->
+  <rect x="200" y="370" width="12" height="12" fill="#0f766e" rx="2"/>
+  <text x="216" y="380" font-size="11" fill="#374151">Recall@3</text>
+  <rect x="310" y="370" width="12" height="12" fill="#d97706" rx="2"/>
+  <text x="326" y="380" font-size="11" fill="#374151">Recall@5</text>
+  <rect x="420" y="370" width="12" height="12" fill="#6366f1" rx="2"/>
+  <text x="436" y="380" font-size="11" fill="#374151">Recall@8</text>
 </svg>
