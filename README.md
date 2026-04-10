@@ -1,10 +1,10 @@
 # MoodSpan
 
-Hybrid-search clinical QA system with an agentic 4-tool reasoning loop, ablation-tested retrieval pipeline, and structured diagnostic reasoning. 438-query eval suite with bootstrap confidence intervals. 92% internal Recall@5, 26% on external MHQA-Gold — both numbers shown honestly.
+Hybrid-search clinical QA system with an agentic 4-tool reasoning loop, ablation-tested retrieval pipeline, and structured diagnostic reasoning. 793 articles, 88 DSM-5-TR disorders, 596 tests, 438-query eval suite with bootstrap confidence intervals. 92% internal Recall@5, 26% on external MHQA-Gold — both numbers shown honestly.
 
 Live at [moodspan.org](https://moodspan.org). Architecture walkthrough at [/research](https://moodspan.org/research). Live demo replay at [/showcase](https://moodspan.org/showcase).
 
-**[Multi-turn conversation examples](EXAMPLES.md)** | **[Technical paper](docs/moodspan-technical-paper.md)** | **[Raw eval data](eval/results/)**
+**[Multi-turn conversation examples](EXAMPLES.md)** | **[Technical paper](docs/moodspan-technical-paper.md)** | **[Raw eval data](eval/results/)** | **[18-question self-audit](docs/audit/round2-answers.md)**
 
 > **Disclaimer:** MoodSpan is an independent research project exploring retrieval-augmented generation, hybrid search, and agentic tool orchestration in a clinical NLP domain. It is not affiliated with any employer, university, hospital, or government agency. Content is for educational purposes only and does not constitute medical advice.
 
@@ -89,6 +89,18 @@ Hybrid fusion is the dominant factor. Cross-encoder reranking provided no statis
 ![MRR/NDCG Ablation](docs/figures/ablation-mrr-ndcg.svg)
 ![Category Heatmap](docs/figures/category-heatmap.svg)
 
+## Retrieval Intelligence
+
+The system doesn't just search — it evaluates its own search quality before generating a response.
+
+| Module | What it does |
+|---|---|
+| Retrieval grader | Scores results on 3 axes (relevance, diversity, coherence) → confidence level + retry strategy |
+| Ambiguity scorer | Maps queries to 8 clinical facets → detects multi-domain diagnostic ambiguity → triggers per-facet sub-queries |
+| Evidence coverage | Post-retrieval facet gap detection → injects `<evidence-gap-warning>` into system prompt when claims aren't fully supported |
+
+When a query touches multiple clinical domains (e.g., "could my anxiety be causing my chest pain or is it a heart condition?"), the ambiguity scorer identifies the distinct facets and issues parallel sub-queries rather than a single broad search. This prevents anchoring on the first relevant result.
+
 ## Safety Architecture
 
 Four deterministic layers plus one LLM-guided layer. The critical path (crisis detection) has zero LLM dependency.
@@ -159,6 +171,17 @@ The gap between internal (92-94%) and external (26-58%) benchmarks reflects the 
 ![Quality](docs/figures/quality-bar.svg)
 ![Conversation Quality](docs/figures/conversation-bar.svg)
 
+## Cross-Model Evaluation
+
+Self-evaluation by the generating model understates hallucination. A cross-model study using Claude Opus 4.6 to judge Qwen 72B responses (n=107) found:
+
+| Judge | Hallucination rate |
+|---|---|
+| Qwen 72B (self-judge) | 5.6% |
+| Claude Opus 4.6 (cross-judge) | 92.5% |
+
+The 16.5x undercount demonstrates why LLM-as-judge evaluation requires cross-model validation. The production system (Llama 3.3 70B) shows 27% hallucination under self-evaluation — the true rate is likely higher.
+
 ## Automated Quality Infrastructure
 
 Two production systems continuously monitor and improve the knowledge base:
@@ -196,7 +219,10 @@ This creates a feedback loop: production queries that the system handles poorly 
 | Vector store | Postgres + pgvector (IVFFlat index) |
 | Cache / rate limit | Redis |
 | Deployment | Vercel |
-| Testing | 246+ unit tests (Vitest) + E2E (Playwright) |
+| LLMs | Llama 3.3 70B (Groq) + Claude Opus 4.6 (differential) |
+| Embeddings | MiniLM-L6-v2 (384-dim, local ONNX) |
+| Testing | 596 unit tests (Vitest, 23 files) + E2E (Playwright) |
+| Monitoring | Sentry (error tracking + session replay) |
 | CI/CD | GitHub Actions |
 
 ## Research Context
@@ -221,7 +247,11 @@ This is a bounded agentic system with domain-specific constraints for clinical e
 - **Inline citations are heuristic.** Citations map claims to source chunks via index markers, but are not verified end-to-end against ground truth.
 - **In-distribution eval ceiling.** The 92% Recall@5 is measured on queries derived from the same KB. External benchmarks (26-58%) are a more realistic measure.
 - **Internal benchmarks are self-authored.** The clinical exams were written by the developer (not a clinician) and have not been externally validated.
+- **Crisis detection has blind spots.** Catches explicit ideation ("I want to die") but misses passive ideation ("wouldn't mind not waking up") and ambivalence patterns. Regex-only gatekeeper.
 - **Auto-generated articles are unreviewed.** The weak-spot auto-fixer generates articles without human review. Generated content may contain errors.
+- **Forced retrieval unmeasured.** `tool_choice: "auto"` — no production analytics aggregate what % of queries actually trigger search.
+
+For the full 18-question self-assessment, see [docs/audit/round2-answers.md](docs/audit/round2-answers.md).
 
 ## Open Questions
 

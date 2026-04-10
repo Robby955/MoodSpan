@@ -1,6 +1,6 @@
 # MoodSpan: Hybrid Retrieval with Multi-Layer Safety for Mental Health Question Answering
 
-**contact@moodspan.org**
+**Robert Sneiderman**
 
 ---
 
