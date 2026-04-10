@@ -6,6 +6,8 @@ Live at [moodspan.org](https://moodspan.org). Architecture walkthrough at [/rese
 
 **[Multi-turn conversation examples](EXAMPLES.md)** | **[Technical paper](docs/moodspan-technical-paper.md)** | **[Raw eval data](eval/results/)**
 
+> **Disclaimer:** MoodSpan is an independent research project exploring retrieval-augmented generation, hybrid search, and agentic tool orchestration in a clinical NLP domain. It is not affiliated with any employer, university, hospital, or government agency. Content is for educational purposes only and does not constitute medical advice.
+
 ## System Architecture
 
 ```mermaid
@@ -115,6 +117,14 @@ Seven evaluation scripts with bootstrap confidence intervals on every metric:
 | `benchmark-eval.ts` | External benchmark eval (MedMCQA-Psychiatry) |
 | `generate-gold-qa.ts` | Gold Q&A generation from structured data |
 
+**Tool routing accuracy** (31 queries spanning all 4 tools + no-tool cases):
+
+| Metric | Score |
+|---|---|
+| Correct tool selection | 31/31 (100%) |
+
+Evaluated on a hand-authored set covering search, compare, condition lookup, screener suggestion, and off-topic routing. The model correctly selects which tool(s) to invoke on every test case.
+
 **Multi-turn conversation quality** (LLM-as-judge, 40 scenarios, 127 total turns). Scored by the same model that generates responses — see Limitations for self-preference bias:
 
 | Metric | Score |
@@ -123,6 +133,8 @@ Seven evaluation scripts with bootstrap confidence intervals on every metric:
 | Groundedness | 4.55/5 |
 | Tone | 4.96/5 |
 | Safety compliance | 4.98/5 |
+
+Multi-turn eval covers 8 conversation categories including follow-up questions, topic switches, clarification requests, and adversarial probes. Quality remains stable across turns — no measurable degradation through 127 turns across the 40-scenario test set.
 
 **Internal clinical exam** (hand-authored by the developer, not by a clinician):
 
@@ -146,6 +158,21 @@ The gap between internal (92-94%) and external (26-58%) benchmarks reflects the 
 
 ![Quality](docs/figures/quality-bar.svg)
 ![Conversation Quality](docs/figures/conversation-bar.svg)
+
+## Automated Quality Infrastructure
+
+Two production systems continuously monitor and improve the knowledge base:
+
+**Quality digest** (daily cron). Samples recent chat traces, scores retrieval confidence and groundedness, and emails a summary of weak spots to the admin. Runs on Vercel Cron with no manual intervention.
+
+**Weak-spot auto-fixer** (on-demand). Queries the trace database for low-confidence and low-groundedness responses, clusters the failing queries into topic gaps, and generates new knowledge base articles to fill those gaps. Pipeline:
+
+1. SQL query for traces with `retrieval_confidence = 'low'` or `groundedness_rate < 0.3`
+2. Gap analysis via LLM — clusters weak queries, checks against existing article slugs, proposes new topics
+3. Article generation via LLM — full structured articles with sections, FAQ, citations, and medical disclaimers
+4. Articles saved to the knowledge base and indexed on next deploy
+
+This creates a feedback loop: production queries that the system handles poorly are automatically identified and used to expand the knowledge base. Three articles have been generated this way so far (OCD checking compulsions, involuntary commitment criteria, BPD vs bipolar differential).
 
 ## Failure Analysis
 
@@ -194,14 +221,16 @@ This is a bounded agentic system with domain-specific constraints for clinical e
 - **Inline citations are heuristic.** Citations map claims to source chunks via index markers, but are not verified end-to-end against ground truth.
 - **In-distribution eval ceiling.** The 92% Recall@5 is measured on queries derived from the same KB. External benchmarks (26-58%) are a more realistic measure.
 - **Internal benchmarks are self-authored.** The clinical exams were written by the developer (not a clinician) and have not been externally validated.
+- **Auto-generated articles are unreviewed.** The weak-spot auto-fixer generates articles without human review. Generated content may contain errors.
 
 ## Open Questions
 
 - Does forcing tool use on round 1 measurably reduce hallucination vs optional retrieval? (A/B infrastructure exists, not yet run)
 - Would domain-adapted embeddings (PubMedBERT, BioLORD) improve long-tail clinical queries?
 - Can constitutional principle ablation identify which of the 9 rules contribute most to safety?
-- How does retrieval quality degrade across conversation turns? (40-scenario dataset ready)
 
 ---
 
-Robert Sneiderman | [moodspan.org](https://moodspan.org) | contact@moodspan.org
+Independent research project exploring RAG, hybrid search, and agentic reasoning in clinical NLP. Not affiliated with any employer, university, hospital, or government agency.
+
+[moodspan.org](https://moodspan.org) | contact@moodspan.org
